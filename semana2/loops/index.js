@@ -56,25 +56,65 @@
 //     console.log(bichos)
 // }
 
-// 2.
-// const arrayOriginal = [10,25,30,40]
-// const novoArray = []
+2.
+//let arrayOriginal = [10, 25, 30, 80, 40]
 
-// const impressao = () =>{
-//   const impressaoDoArray = console.log(arrayOriginal)
+// a)
+// const impressao = () => {
+//     const impressaoDoArray = console.log(arrayOriginal)
 //     return impressaoDoArray
 // }
 // impressao()
 
-// for (let numeros of arrayOriginal ){
+// b)
+// for (let numeros of arrayOriginal) {
 //     console.log(numeros / 10)
 // }
 
+// c)
+// let novoArray = []
+// for (let numerosPares of arrayOriginal) {
+//     if (numerosPares % 2 === 0) {
+//         novoArray.push(numerosPares)
+//     }
+// }
+// console.log(novoArray)
+
+// d)
+// let arrayFinal
+// let arrayOriginalComStrings = []
+// const arrayComStrings = (arrayOriginal) => {
+//     let i = 0
+//     for (numeros of arrayOriginal) {
+//         arrayFinal = `O elemento do índex ${i} é: ${numeros}`
+//         arrayOriginalComStrings.push(arrayFinal)
+//         i++
+//     }
+// }
+// console.log(arrayOriginalComStrings)
+// arrayComStrings(arrayOriginal)
+
+// e)
+// let menorNumero = 0
+// let maiorNumero =0
+// const  imprimesOsDoisExtremosDoArray = (arrayOriginal) => {
+//     for (let i = 0; i < arrayOriginal.length -1; i++) {
+//     const valor = arrayOriginal[i]
+//         if (i === 0){
+//         maiorNumero = menorNumero = valor
+//     }
+//        else if (valor > maiorNumero){
+//             maiorNumero = valor 
+//         }
+//         else if (valor < menorNumero){
+//             menorNumero = valor
+//         }
+//     }
+//     console.log(`o Maior número é(${maiorNumero} e o menor Número é  ${menorNumero}`)
+// }
+// imprimesOsDoisExtremosDoArray(arrayOriginal)
 
 
 
 
 
-
-
-  
