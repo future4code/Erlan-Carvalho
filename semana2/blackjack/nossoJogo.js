@@ -27,23 +27,23 @@ if (confirm("Quer iniciar uma nova rodada?")) {
       
      const  baralhoUsuarioFinal =  baralhoUsuraio1.texto + baralhoUsuario2.texto 
      const baralhoFinalUsuarioValor =  baralhoUsuraio1.valor + baralhoUsuario2.valor
-     console.log('Usuario cartas:' , baralhoUsuarioFinal, 'pontuação',baralhoFinalUsuarioValor )
+     console.log("Usuário - cartas: " , baralhoUsuarioFinal, '- pontuação ',baralhoFinalUsuarioValor )
      const baralhoComputadorFinal =  baralhoCompuatador.texto + baralhoComputador2.texto
      const baralhoFinalComputadorValor = baralhoCompuatador.valor + baralhoComputador2.valor
-      console.log('Computador cartas' , baralhoComputadorFinal, 'Pontuação ',  baralhoFinalComputadorValor )
-      
+      console.log("Computador - cartas: " , baralhoComputadorFinal, '- pontuação  ',  baralhoFinalComputadorValor )
 
-     if( baralhoUsuarioFinal > baralhoComputadorFinal &&  baralhoFinalUsuarioValor >baralhoFinalComputadorValor ){
+
+     if( baralhoUsuarioFinal > baralhoComputadorFinal &&  baralhoFinalUsuarioValor >baralhoFinalComputadorValor){
         console.log('O usuário ganhou!')
      } 
      else if ( baralhoUsuarioFinal < baralhoComputadorFinal &&  baralhoFinalUsuarioValor < baralhoFinalComputadorValor ){
         console.log("O computador ganhou!")
      }
-     else if(baralhoUsuarioFinal === baralhoComputadorFinal && baralhoFinalUsuarioValor === baralhoFinalComputadorValor )
+    else if(baralhoUsuarioFinal === baralhoComputadorFinal && baralhoFinalUsuarioValor === baralhoFinalComputadorValor ){
          console.log("Empate!")
    }
 
-//}
+}
 else {
    console.log("O jogo acabou")
 }
