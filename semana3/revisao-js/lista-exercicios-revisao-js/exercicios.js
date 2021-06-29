@@ -1,55 +1,83 @@
 // EXERCÍCIO 01
 function inverteArray(array) {
-  // const arrayQueVaiSerInvertido = [1,2,3,4,]
-  // const inversaoDoArray = arrayQueVaiSerInvertido.pop([0],[1],[2] )
-  // const recussitaarrayInvertido = inversaoDoArray.push([0],[1])
+  let arrayVazio = []
+const finalDoArray = array.length-1
+for(let i = finalDoArray; i >= 0;  i--){
+arrayVazio.push(array[i])
 }
-//console.log(inverteArray())
+return arrayVazio
+}
+console.log(inverteArray([1,2,3,4,5,6]))
 
 // EXERCÍCIO 02
-//const arrayDeNumeros = [1,2,3,4,5,6]
 function retornaNumerosParesElevadosADois(array) {
-
-// for (let i = 0; i < arrayDeNumeros.length; i++){
-//   if (arrayDeNumeros[i] % 2 === 0){
-//   arrayDeNumeros[i*i]
-//   return arrayDeNumeros
-// }
-// }
+let array2 = []
+for (let i = 0; i < array.length ; i++){
+  if (array[i] % 2 === 0){
+  array2.push(array[i] * array[i] )
+  }
 }
-//console.log(retornaNumerosParesElevadosADois(arrayDeNumeros))
+return array2
+}
+
 
 // EXERCÍCIO 03
 function retornaNumerosPares(array) {
-  
-
+  let array2 = []
+  for (let i = 0; i< array.length; i++){
+    if (array[i] % 2 === 0){
+      array2.push(array[i])
+    }
+  }
+return array2
 }
 
 // EXERCÍCIO 04
-function retornaMaiorNumero(array) {
 
+function retornaMaiorNumero(array) {
+  let maiorNumero = array[0]
+  for (let numeros of array){
+      if(maiorNumero < array[numeros]){
+        maiorNumero = array[numeros]
+      }
+  }
+return maiorNumero
 }
+
 
 // EXERCÍCIO 05
 function retornaQuantidadeElementos(array) {
-  
+  return array.length
+
 }
+console.log(retornaQuantidadeElementos([2,3,4,5]) )
 
 // EXERCÍCIO 06
 function retornaExpressoesBooleanas() {
-
+return[false,false, true, true, true]
 }
 
 // EXERCÍCIO 07
 function retornaNNumerosPares(n) {
-
+  const arrayDeNumerosPares = []
+  for (let i = 0; arrayDeNumerosPares.length < n; i++){
+  if(n % 2 === 0){
+    arrayDeNumerosPares.push(n)
+  }
 }
+  return arrayDeNumerosPares
+}
+
 
 // EXERCÍCIO 08
 function checaTriangulo(a, b, c) {
-  // return 'Escaleno'
-  // return 'Equilátero'
-  // return 'Isósceles'
+  if (a === b && b === c){
+  return 'Equilátero'
+  }else if (a === b && b != c){
+    return 'Isósceles'
+  }else {
+    return 'Escaleno'
+  } 
 }
 
 // EXERCÍCIO 09
