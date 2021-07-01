@@ -9,12 +9,13 @@
     padding: 0;
 }
 
-h2 {
+body>h2 {
     background-color: #fe7e02;
     padding: 10px 5px 10px 5px;
     color: white;
     text-align: center;
 }
+
 
 input {
     height: 20px;
@@ -74,7 +75,8 @@ div img {
 }
 
 #container-de-descricao>ol {
-    padding: 15px 0px;
+    padding: 15px  380px;
+    
 }
 
 #container-para-comprar {
@@ -86,6 +88,11 @@ div img {
     padding: 100px 0;
     font-size: 60px;
 }
+
+
+.afastar-texto-do-cabecalho{
+    padding : 90px  50px 0 50px;
+ }
 
 
 /**
@@ -129,9 +136,4 @@ td button {
 
 #back-button:hover {
     background-color: #635a3d
-}
-
-.afastar-texto-do-cabecalho{
-   padding : 90px  50px 0 50px;
-    display: block;
 }
