@@ -53,6 +53,7 @@ div img {
 .container {
     height: 500px;
     text-align: center;
+    
 }
 
 .icone {
@@ -69,6 +70,7 @@ div img {
 #container-de-descricao {
     background-color: #2274a5;
     color: white;
+   
 }
 
 #container-de-descricao>ol {
@@ -127,4 +129,9 @@ td button {
 
 #back-button:hover {
     background-color: #635a3d
+}
+
+.afastar-texto-do-cabecalho{
+   padding : 90px  50px 0 50px;
+    display: block;
 }
