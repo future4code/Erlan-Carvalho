@@ -7,6 +7,7 @@
 * {
     margin: 0;
     padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 body>h2 {
@@ -22,7 +23,9 @@ input {
      width: 500px;
      border:none;
     border-bottom: 2px solid black ;
+ 
 }
+
 
 button:focus {
     color: white;
@@ -129,6 +132,7 @@ td button:hover{
 .container-do-search {
     margin-top: 20px;
     height: 100px;
+    font-family: roboto;
 }
 
 
@@ -144,4 +148,9 @@ td button:hover{
 
 #back-button:hover {
     background-color: #635a3d
+}
+
+#fonte-do-input{
+font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+font-style:normal;
 }
