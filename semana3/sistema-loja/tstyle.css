@@ -1,0 +1,25 @@
+.cor-de-titulo{
+    background-color: rgba(0, 128, 28, 0.945);
+    padding:20px 400px 20px 400px;
+    margin:10px 80px 10px 80px;  
+}
+
+.cor-dos-links{
+    background-color:crimson;
+    color:white
+}
+.cor-de-rodape{
+    background-color:grey;
+    height: 50px;
+    width: 1000px;
+    margin: 0px 100px 0px 100px;
+    padding: 10px;
+    display:block
+}
+.aparecer-na-mesma-linha{
+     display: inline; 
+}
+#melehorar-email{
+    padding:20px 30px 30px 40px;
+     display: block;
+}
