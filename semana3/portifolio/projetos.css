@@ -12,17 +12,15 @@
  
 }
 
-
 /* Estilização do menu */
 .exibicao-do-menu{
     display:inline;
     padding:20px;
-}
+}  
 
-.estlizacao-dos-links{
-    background-color: rgb(200, 36, 36);
-    color:white;
-    border:white
+.estilizacao-dos-links{
+     background-color:rgb(200, 36, 36);
+    color:white; 
 }
 
 
@@ -30,4 +28,17 @@
 body{
     background-color:rgb(19, 9, 83);
     color: white
+}
+.links-do-projeto{
+    color:white;
+    font-size:20px;
+    margin:20px
+  
+}
+a:hover{
+   background-color: rgb(200, 36, 36);
+}
+.imagens-da-games-e-cia-debugue{
+    width:1000px;
+    height: 600px;
 }

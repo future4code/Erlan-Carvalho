@@ -4,6 +4,7 @@
     padding : 30px;
     font-size: 50px;
     color:white;
+    text-decoration-color:rgb(200, 36, 36);
  
 }
 #fundo-da-div{
@@ -11,22 +12,18 @@
     margin:0
  }
 
-
 /* Estilização do menu */
 .exibicao-do-menu{
     display:inline;
     padding:20px;
 }
 
-#centralizacao-do-menu{
-    margin: 0 auto 0 auto;
-}
-
 .estlizacao-dos-links{
     background-color: rgb(200, 36, 36);
     color:white;
-    border:white
+    
 }
+
 
 
 /*Estilizações gerais*/
@@ -42,7 +39,7 @@ body{
 
 
 
-#tamanho-de-iamgem{
+#tamanho-de-imagem{
     height:200px;
     
 }
