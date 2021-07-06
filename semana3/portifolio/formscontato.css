@@ -1,0 +1,62 @@
+/*estilização do nome do site*/
+.customizção-do-titulo{
+    text-align: center;
+    padding : 30px;
+    font-size: 50px;
+    color:white;
+ 
+}
+#fundo-da-div{
+    background-color: rgb(200, 36, 36);
+    margin:0
+ 
+}
+
+
+
+/* Estilização do menu */
+.exibicao-do-menu{
+    display:inline;
+    padding:20px;
+}
+
+.estlizacao-dos-links{
+    background-color: rgb(200, 36, 36);
+    color:white;
+    border:white
+}
+
+.alinhamento-da-div-do-menu{
+   width: 45%;
+    margin:0 auto;
+    box-align: center
+}
+
+/*Estilizações gerais*/
+body{
+    background-color:rgb(19, 9, 83);
+    color: white
+}
+
+#seuNome{
+    margin:10px 0 20px 0;
+    height:20px;
+}
+
+#seuEmail{
+    margin:10px 0 20px 0;
+    height:20px
+}
+
+#pequenoTexto{
+
+    margin:10px 0 20px 0 ;
+    height:100px
+}
+#botao{
+    margin:4px 0;
+}
+#botao:hover{
+    background-color:slategrey;
+    cursor:pointer;
+}

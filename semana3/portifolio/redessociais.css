@@ -1,0 +1,50 @@
+/*estilização do nome do site*/
+.customizção-do-titulo{
+    text-align: center;
+    padding : 30px;
+    font-size: 50px;
+    color:white;
+ 
+}
+#fundo-da-div{
+    background-color: rgb(200, 36, 36);
+    margin:0
+ 
+}
+
+
+
+/* Estilização do menu */
+.exibicao-do-menu{
+    display:inline;
+    padding:20px;
+}
+
+.estlizacao-dos-links{
+    background-color: rgb(200, 36, 36);
+    color:white;
+    border:white
+}
+
+
+
+/*Estilizações gerais*/
+body{
+    background-color:rgb(19, 9, 83);
+    color: white
+}
+
+.tabela{
+   display:block;
+   margin:20px ;
+    color:white;
+    font-size: 20px  
+}
+td:hover{
+    cursor:pointer;
+    background-color:rgb(200, 36, 36)
+}
+.imagem{
+    width:190px;
+    height: 130px;
+}
