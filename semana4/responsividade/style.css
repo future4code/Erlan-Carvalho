@@ -1,0 +1,110 @@
+/* Parte Superior da página */
+header{
+    background-color: orange;
+    display:flex;
+    align-items: center;
+    padding:0 0 0 20px;
+    
+}
+.campo-de-busca{
+    padding:0 0 0 60vw;
+}
+
+button{
+    background-color: orange;
+}
+button:hover{
+    background-color:lightsalmon ;
+    cursor: pointer;
+}
+
+
+/* Conteúdo Da Página */
+
+
+body{
+    display:grid;
+    grid-template-rows:1fr 1fr 1fr;
+    height:100vh;    
+    
+}
+
+main{
+    display:grid;
+    grid-template-rows: 1fr 1fr ;
+    grid-template-columns:1fr 1fr 1fr 1fr;
+    justify-items: center;
+    align-items: stretch;
+  
+}
+
+.container{
+    border: 3px solid black;
+    
+}
+video{
+    height: 25vh;
+
+}
+
+/* Parte Inferior Da página */
+footer{
+    background-color: orange;
+    text-align: center;
+    font-size: 20px;
+}
+
+/* Estilização das páginas dedicadas para 
+os vídeos */
+.paginas-dedicadas-p-videos{
+width:50vw;
+height:80vh;
+}
+
+/* Responsividade */
+@media screen and (min-device-width:320px) and (max-device-width:480px){
+
+    header{
+     background-color: orange;
+      width:90vw;
+      display: grid;
+     grid-template-rows: 130px 5vh;
+    grid-template-columns:1fr;
+    justify-items: start;
+    align-items: center;
+ }
+.campo-de-busca{
+    display:grid;
+}
+
+main{
+    display:grid;
+    grid-template-columns: 1fr;  
+}
+
+}
+
+@media screen and (min-device-width : 481px) and (max-device-width : 800px) {
+    
+    header{
+        background-color: orange;
+         width:94vw;
+         display: grid;
+        grid-template-rows: 1fr 1fr;
+       grid-template-columns:1fr;
+       justify-items: start;
+       align-items: center;
+    }
+   .campo-de-busca{
+       display:grid;
+   }
+   
+   main{
+       display:grid;
+       grid-template-columns: 1fr  ; 
+       width: ;
+
+   }
+   
+    }
+
