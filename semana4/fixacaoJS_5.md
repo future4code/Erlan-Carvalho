@@ -1,3 +1,4 @@
+function criarArrayNomesAnimais() {
     const animais = [
       { nome: "Cachorro", classificacao: "mamífero" },
       { nome: "Papagaio", classificacao: "ave" },
@@ -5,7 +6,10 @@
       { nome: "Carpa", classificacao: "peixe" },
       { nome: "Pomba", classificacao: "ave" }
     ]
-
- const apenasNomeAnimais= criarArrayNomesAnimais.map ()
-
+      const apenasNomeAnimais= animais.map ((nomes)=>{
+        return nomes.nome
+     })
+     return apenasNomeAnimais
 }
+console.log(criarArrayNomesAnimais())
+
