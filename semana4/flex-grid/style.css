@@ -1,0 +1,65 @@
+*{
+    font-family:'Times New Roman', Times, serif;
+}
+/* estilização dos ícones */
+.icone{
+    width:17px;
+    height:17px;
+    display: inline;
+    margin:0px 10px
+}
+
+.icones{
+    width:17px;
+    height:17px;
+   
+   
+}
+
+/*estilização do primeiro titulo*/ 
+.div-do-primeiro-titulo{
+    background-color: mediumvioletred;
+    display:flex;
+   align-items:center;
+   }
+   .botao{
+      margin: 0 14px 0 auto;
+     }
+
+/*Estilização do menu*/
+#div-do-menu{
+    background-color: #f2d0e0;
+   /* height: 100vh;
+   margin:0px 100%  0px 0px;
+   width:22vw; */
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  justify-items: stretch;
+  height:50vh;
+  width:20vw
+}
+
+/*Estilizações Gerais*/
+.imagem-do-bolo-de-choco{
+    height:250px;
+}
+
+.div-do-card-do-bolo{
+    border-bottom:1px solid darkgrey;
+    border-right: 1px solid darkgrey;
+    width:250px;
+   
+}
+
+.container{
+    display:grid;
+    grid-template-columns: 10fr 1fr 1fr 1fr ;
+    justify-items: right;
+}
+   
+
+.div-do-rodape{
+    background-color: mediumvioletred;
+    display:flex;
+    justify-content: center;
+}
