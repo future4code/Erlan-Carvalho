@@ -1,0 +1,15 @@
+.card-pequeno-container {
+    display: grid;
+    grid-template-columns: 0.50fr 1fr 1fr;
+    align-items: center;
+    row-gap:20px;
+    border: 1px solid black;
+    width: auto;
+    padding: 15px 10px;
+    margin: 10px auto;
+}
+
+.card-pequeno-container >img {
+    width: 30px;
+    margin-right: 10px;
+}
