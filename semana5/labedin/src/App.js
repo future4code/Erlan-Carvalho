@@ -7,6 +7,7 @@ import PerfilSlack from './img/foto-perfil-slack.jpg';
 import  imgEmail from './img/email.png';
 import imgEndereco from './img/endereco.png';
 import imgVsa from './img/vsa.jpg'
+import imgUfba from './img/ufba.jpg'
 import imgLabenu from'./img/labenu.png'
 
 function App() {
@@ -27,12 +28,12 @@ function App() {
 
         <CardPequeno
           imagemCardPequeno={imgEmail}
-          TxemailEndereco='Email:'
-          CoEmailEndereco="helloworld@gmail.com"/>
+          TxemailEndereco="Email:"
+          CoEmailEndereco="Helloworld@gmail.com"/>
 
         <CardPequeno
           imagemCardPequeno={imgEndereco}
-          TxemailEndereco="Endereço:"
+          TxemailEndereco="Endereço: "
           CoEmailEndereco="Rua Hello World, nº90"/>
       </div>
 
@@ -44,6 +45,12 @@ function App() {
           imagem={imgVsa}
           nome="VSA"
           descricao="Aprendizagem profissional no transporte."
+        />
+        
+        <CardGrande
+          imagem={imgUfba}
+          nome="UFBA"
+          descricao="Ensino Superior"
         />
 
         <CardGrande
