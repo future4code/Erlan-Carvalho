@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled, { ThemeProvider } from 'styled-components'
 
 import {IconeComContador} from '../IconeComContador/IconeComContador'
 
@@ -49,17 +49,16 @@ class Post extends React.Component {
   }
 
   onClickCurtida = () => {
-    this.setState({
-     curtido: !this.state.curtido, 
-  
-    }) 
-  }
-
-  onClickNumeroCurtida = ( ) =>{
-    this.setState({
-      curtido:true,
-      numeroCurtidas: this.state.numeroCurtidas +1
-    })
+   this.setState({
+  curtido:!this.state.curtido,
+  numeroCurtidas: this.state.curtido + 1
+})
+if(this.state.curtido){
+  this.setState({
+    curtido:false,
+    numeroCurtidas:this.state.numeroCurtidas - 1
+  })
+}
   }
 
   onClickComentario = () => {
@@ -73,6 +72,7 @@ class Post extends React.Component {
       comentando: false,
       numeroComentarios: this.state.numeroComentarios + 1
     })
+ 
   }
 
   render() {
@@ -102,8 +102,10 @@ class Post extends React.Component {
         <IconeComContador
           icone={iconeCurtida}
           onClickIcone={this.onClickCurtida}
-          valorContador={this.state.numeroCurtidas}
+          valorContador={this.state.numeroCurtidas }
+       
         />
+    
 
         <IconeComContador
           icone={iconeComentario}
