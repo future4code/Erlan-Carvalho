@@ -18,7 +18,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"name\": \"erudita\"\r\n    }\r\n   ",
+					"raw": "{\r\n    \"name\": \"Qualidade\"\r\n    }\r\n   ",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -42,7 +42,7 @@
 			"response": []
 		},
 		{
-			"name": "verify Playlists",
+			"name": "verify Playlists created",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -93,7 +93,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"name\": \"Emerald Sword\",\r\n    \"artist\":\"Rhapsody of Fire\",\r\n    \"url\":\"https://www.youtube.com/watch?v=AiOs7nNbPWU\"\r\n}",
+					"raw": "{\r\n    \"name\": \"Odeon\",\r\n    \"artist\":\"Ernesto Nazareth\",\r\n    \"url\":\"https://www.youtube.com/watch?v=bEfRtR12Y4k\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -117,7 +117,7 @@
 					"variable": [
 						{
 							"key": "playlistId",
-							"value": "7b98cc3b-20fb-420f-8642-421980c6e952"
+							"value": "16259303-7528-49c9-a23e-ca2c5f2f7f48"
 						}
 					]
 				}
@@ -125,7 +125,7 @@
 			"response": []
 		},
 		{
-			"name": "verify music from playlists",
+			"name": "verify tarck from playlists",
 			"request": {
 				"method": "GET",
 				"header": [
@@ -152,7 +152,115 @@
 					"variable": [
 						{
 							"key": "playlistId",
-							"value": "8fb4d48c-8567-475e-80a1-5166dfab02be"
+							"value": "16259303-7528-49c9-a23e-ca2c5f2f7f48"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "search playlist",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "erlan-carvalho-lovelace",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/search?name=qualidade",
+					"protocol": "https",
+					"host": [
+						"us-central1-labenu-apis",
+						"cloudfunctions",
+						"net"
+					],
+					"path": [
+						"labefy",
+						"playlists",
+						"search"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "qualidade"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete tracks from playlists",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "erlan-carvalho-lovelace",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/:playlistId/tracks/:trackId",
+					"protocol": "https",
+					"host": [
+						"us-central1-labenu-apis",
+						"cloudfunctions",
+						"net"
+					],
+					"path": [
+						"labefy",
+						"playlists",
+						":playlistId",
+						"tracks",
+						":trackId"
+					],
+					"variable": [
+						{
+							"key": "playlistId",
+							"value": "b2c648a5-bb39-4de3-adc6-7e15104e64f1"
+						},
+						{
+							"key": "trackId",
+							"value": "334e7497-416e-4a04-aebf-62fa512a2242"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete playlist",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "erlan-carvalho-lovelace",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/:playlistId",
+					"protocol": "https",
+					"host": [
+						"us-central1-labenu-apis",
+						"cloudfunctions",
+						"net"
+					],
+					"path": [
+						"labefy",
+						"playlists",
+						":playlistId"
+					],
+					"variable": [
+						{
+							"key": "playlistId",
+							"value": "7b98cc3b-20fb-420f-8642-421980c6e952"
 						}
 					]
 				}
