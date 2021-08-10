@@ -33,7 +33,7 @@ const Post = (props) => {
   };
 
   const enviarComentario = (comentario) => {
-    const listaDeComentarios = [... comentarios, comentario]
+    const listaDeComentarios = [... comentarios,comentario,""]
         setComentarios(listaDeComentarios)
         setComentando(false)
         setNumeroComentarios(numeroComentarios + 1)
