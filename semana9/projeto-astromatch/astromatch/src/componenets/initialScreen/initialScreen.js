@@ -12,7 +12,7 @@ border-radius:45%;
 margin-top:1vh;
 &:hover{
     cursor:pointer;
-    background-color:gray;
+    background-image:linear-gradient(to bottom,white,#FF533D, black);
 }`
 
 const ContainerOfTheButtonWithTheTitle = styled.div`
@@ -21,6 +21,7 @@ grid-template-columns:3.7fr 1fr;
 justify-content:center;
 padding:1vh 3.5vw;
 justify-content:center;
+background-color:#FF533D;
 `
 
 const ButtonsSwipeAndMatchContainer = styled.div`
@@ -28,16 +29,12 @@ display:flex;
 align-items: flex-end;
 justify-content:center;
 justify-content: space-evenly;
-`
 
-const ContainerOfProfile = styled.div`
-border:solid tomato 3px;
-border-radius:10%;
 `
-
 const StyledImage = styled.img`
+margin-top:1vh;
 height:36vh;
-width:20vw;
+width:30vw;
 `
 
 //functional component
@@ -45,15 +42,11 @@ width:20vw;
 function InitialScreen(props) {
     const [people, setPeople] = useState({})
 
-
     const getPeople = async () => {
         const url = "https://us-central1-missao-newton.cloudfunctions.net/astroMatch/erlan-carvalho-lovelace/person"
         try {
             const response = await axios.get(url)
-            console.log(response.data)
             setPeople(response.data.profile)
-
-
         }
 
         catch (error) {
@@ -63,7 +56,6 @@ function InitialScreen(props) {
         }
     }
 
- 
     const chooseProfile = async (choice) => {
         const url = "https://us-central1-missao-newton.cloudfunctions.net/astroMatch/erlan-carvalho-lovelace/choose-person"
 
@@ -72,7 +64,6 @@ function InitialScreen(props) {
                 id: people.id,
                 choice: choice
             })
-            console.log(response)
             getPeople()
         } catch (error) {
             console.log("Erro, tente novamnete")
@@ -94,24 +85,26 @@ function InitialScreen(props) {
     }, [])
 
 
+
+
     //JSK       
 
     return (
 
         <div>
             <ContainerOfTheButtonWithTheTitle>
-                <h3>Astromatch</h3>
-                <ButtonsStyled onClick={props.goToMatchScreen}>💌 </ButtonsStyled>
+                <h3 >Astromatch</h3>
+                <ButtonsStyled onClick={props.goToMatchScreen}>💓 </ButtonsStyled>
             </ContainerOfTheButtonWithTheTitle>
-            <hr />
-            <ContainerOfProfile>
+
+            <div>
                 <StyledImage src={people.photo} alt={'Imagem de perfil'} />
                 <p><strong>{people.name}</strong>, {people.age}</p>
                 <h5>{people.bio}</h5>
-            </ContainerOfProfile>
+            </div>
             <ButtonsSwipeAndMatchContainer>
                 <ButtonsStyled onClick={chooseProfileNo}>X</ButtonsStyled>
-                <ButtonsStyled onClick={chooseProfileYes}>♥️</ButtonsStyled>
+                <ButtonsStyled onClick={chooseProfileYes}>💕 </ButtonsStyled>
             </ButtonsSwipeAndMatchContainer>
             <hr />
         </div>

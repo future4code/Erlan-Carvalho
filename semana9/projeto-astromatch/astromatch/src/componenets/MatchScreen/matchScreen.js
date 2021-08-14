@@ -4,13 +4,6 @@ import styled from 'styled-components';
 
 //Styles 
 
-const ContainerChild = styled.div`
-border:solid red 10px;
-border-radius:17%;
-width:50vw;
-height:95.7vh;
-background-color:white;
-`
 const ButtonsStyled = styled.button`
 height:9vh;
 width:10vw;
@@ -20,39 +13,59 @@ border-radius:45%;
 margin-top:1vh;
 &:hover{
     cursor:pointer;
-    background-color:gray;
-}`
+    background-image:linear-gradient(to bottom,white,#FF533D, black);
 
+}`
+const MatchImage = styled.img`
+height:12vh;
+width:7vw;
+image-resolution:25px;
+border:solid black 1px;
+border-radius:25%;`
+
+const TextOfTheMatchInfo = styled.h6`
+margin-bottom:15vh;
+display:inline-block;
+`
 
 const ContainerOfTheButtonWithTheTitle = styled.div`
 display:grid;
 grid-template-columns:3.7fr 1fr;
 justify-content:center;
 padding:1vh 3.5vw;
-
 justify-content:center;
+background-color:#FF533D;
+`
+const ContaiinerOfTheMatches = styled.div`
+display:grid;
+grid-template-columns:1fr 5fr 1fr;
+border:solid black 2px;
+height:13vh;
+width:auto;
+
 `
 
 // Functional component 
 function MatchScreen(props) {
-  // const [people, setPeople] = useState({})
+  const [profilesWhoImetch, setprofilesWhoImetch] = useState([])
 
 
   const getPeopleWhoImetch = async () => {
     const url = "https://us-central1-missao-newton.cloudfunctions.net/astroMatch/erlan-carvalho-lovelace/matches"
     try {
-        const response = await axios.get(url)
-        // setPeople(people.response.profile)
-        console.log(response.data)
+      const response = await axios.get(url)
+      console.log(response.data)
+      setprofilesWhoImetch(response.data.matches)
     } catch (error) {
-       console.log('Erro, tente novamente ') 
+      console.log('Erro na tela de match, tente novamente ')
     }
 
-}
+  }
 
-useEffect(()=>{
-  getPeopleWhoImetch()
-},[])
+  useEffect(() => {
+    getPeopleWhoImetch()
+  }, [getPeopleWhoImetch])
+
 
 
   //JSX
@@ -62,10 +75,15 @@ useEffect(()=>{
         <h3>Matchs</h3>
         <ButtonsStyled onClick={props.gotoInitialScreen}>🔙 </ButtonsStyled>
       </ContainerOfTheButtonWithTheTitle>
-      <hr />
-      {/* <img src={people.photo}/> */}
-      {/* <h6>{people.name}, {people.age} </h6> */}
-      <hr />
+
+      <div>
+        {profilesWhoImetch.map((profile) => (
+          <ContaiinerOfTheMatches key={profile.id}>
+            <MatchImage src={profile.photo} alt={"Imagem de perfil"} />
+            <TextOfTheMatchInfo>{profile.name}, {profile.age}</TextOfTheMatchInfo>
+          </ContaiinerOfTheMatches>
+        ))}
+      </div>
     </div>
 
 

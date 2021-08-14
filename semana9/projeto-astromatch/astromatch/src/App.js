@@ -7,25 +7,28 @@ import styled from 'styled-components';
 //styles
 const ButtonToClearSwipeAndMatch = styled.button`
 border: solid tomato 2px;
-border-radius:20%;
+border-radius:7%;
 margin-top:4.10vh;
+height:8vh;
+width:10vw;
+font-size:4vh;
 &:hover{
     cursor:pointer;
-    background-color:gray;
+    background-image:linear-gradient(to bottom,white,#FF533D, black);
 }
 `
 const ContainerFather = styled.div`
 display:flex;
 justify-content:center;
 text-align:center;
-background-color: #328fa8;
+background-image:linear-gradient(to bottom,black,#2596be, white);
 `
 const ContainerChild = styled.div`
-border:solid red 10px;
-border-radius:17%;
+border:solid black 2px;
 width:50vw;
-height:96.4vh;
-background-color:white;
+height:99vh;
+background-image:linear-gradient(to bottom,black,#2596be, white);
+;
 `
 const StyledBrand = styled.div`
 writing-mode: vertical-rl;
@@ -34,8 +37,6 @@ font-size:6vh;`
 //functional component
 function App(props) {
   const [screen, setScreen] = useState('initialScreen')
-  const [swipsAndMatches, setSwipsAndMatches] = useState([])
-
 
   const changeScreen = () => {
     switch (screen) {
@@ -58,49 +59,36 @@ function App(props) {
 
 
 
-  const cleanSwipsAndMatches = async () => {
+  const cleanSwipsAndMatches = async (props) => {
     const url = `https://us-central1-missao-newton.cloudfunctions.net/astroMatch/erlan-carvalho-lovelace/clear`
     try {
       const response = await axios.put(url)
+      alert("Matchs e deslikes apagados!!")
+    }
 
-      console.log(response)
-    } catch (error) {
+    catch (error) {
       console.log('Erro!! Tente Novamente Mais Trade')
 
     }
 
   }
-  const clearTheProfile = ()=>{
-
-  }
-
-  useEffect(() => {
-    cleanSwipsAndMatches()
-  }, [])
-
 
 
   //JSX
 
   return (
-    <div>
       <ContainerFather>
         <StyledBrand>
           <h1>astro</h1>
         </StyledBrand>
-
         <ContainerChild>
-
           {changeScreen()}
-
-          <ButtonToClearSwipeAndMatch onClick={clearTheProfile}>Limpar Swipes e Matchs</ButtonToClearSwipeAndMatch>
+          <ButtonToClearSwipeAndMatch onClick={cleanSwipsAndMatches}>Limpar </ButtonToClearSwipeAndMatch>
         </ContainerChild>
         <StyledBrand>
           <h1>match</h1>
         </StyledBrand>
       </ContainerFather>
-
-    </div>
   );
 }
 
