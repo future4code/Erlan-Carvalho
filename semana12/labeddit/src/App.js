@@ -1,9 +1,9 @@
-
+import RoutesComponent from "./routes/RoutesComponentes.js";
 
 function App() {
   return (
     <div >
-    <h1>Hello</h1>
+    <RoutesComponent/>
     </div>
   );
 }
