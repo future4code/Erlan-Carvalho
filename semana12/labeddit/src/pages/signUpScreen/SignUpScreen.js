@@ -1,33 +1,58 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { useHistory } from 'react-router-dom';
-import axios from 'axios';
-import { ContainerFather , ButtonsSection} from './Styled';
-
+import { ContainerFather, SignUpForm} from './Styled';
+import { backToLoginPage } from '../../routes/Coordinator'
+import useForms from '../../hooks/UseForms';
+import { CreateUser } from '../../services/accessRequests';
+import { UseUnprotectedPages } from '../../hooks/UseUnprotectedPage';
 
 export default function SignUpScreen() {
+    UseUnprotectedPages()
 
     const history = useHistory()
-    
-    const backToLoginPage = ()=>{
-        history.goBack()
+
+    const [forms, onChange, clear] = useForms({
+        username: "",
+        email: "",
+        password: ""
+    })
+
+    const submitForm = (event) => {
+        event.preventDefault()
+        CreateUser(forms,clear,history)
+
     }
-
-    const CreateUser = () => {
-        const url = ""
-
-    }
-
 
     return (
         <ContainerFather>
+
             <h1>Cadastro</h1>
-            <input type={"text"} placeholder={"Nome de usuário"}></input>
-            <input type={"email"} placeholder={'Email'}></input>
-            <input type={'password'} placeholder={'Senha'}></input>
-            <ButtonsSection>
-            <button>Cadastrar</button>
-            <button onClick={backToLoginPage}>Voltar</button>
-            </ButtonsSection>
+
+            <SignUpForm onSubmit={submitForm}>
+                <input type={"text"} placeholder={"Nome de usuário"} name={"username"}
+                    value={forms.username}
+                    onChange={onChange}
+                    required>
+                </input>
+
+                <input type={"email"} placeholder={'Email'}
+                    name={"email"}
+                    value={forms.email}
+                    onChange={onChange}
+                    required>
+                </input>
+
+                <input type={'password'} placeholder={'Senha'}
+                    name={"password"}
+                    value={forms.password}
+                    onChange={onChange}
+                    required>
+                </input>
+
+                <button type={"submit"}>Cadastrar</button>
+            </SignUpForm>
+            <button onClick={() => backToLoginPage(history)}>Voltar</button>
+
         </ContainerFather>
     );
 };

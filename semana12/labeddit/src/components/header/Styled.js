@@ -1,6 +1,9 @@
 import Styled from 'styled-components';
 
+
 export const StyledHeader = Styled.header`
+position:fixed;
+width:100%;
 display:flex;
 flex-direction:row;
 justify-content:space-around;
@@ -12,8 +15,10 @@ button{
     border:none;
     &:hover{
         cursor:pointer;
+        transform: scale(1.2);
+        transition: all 0.5s;
     }
 
 }
 
-` 
+`

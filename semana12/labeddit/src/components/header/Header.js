@@ -1,5 +1,5 @@
 import React from 'react';
-import LogOut from '../../constants/logOutButton/LogOutButton';
+import LogOut from '../../components/logOutButton/LogOutButton';
 import { useHistory } from 'react-router-dom';
 import { StyledHeader } from './Styled';
 

@@ -1,57 +1,62 @@
 import React from 'react';
-import Header from '../../assets/header/Header.js';
+import Header from '../../components/header/Header.js';
+import { UseProtectedPages } from '../../hooks/UseProtectedPages.js';
 import { ContainerFather, ContainerOfPost, ButtonAndCommentSection, UserNameContainer, ContainerOfYourComment, ContainerOfPeopleComent } from './Styled';
 
 const PostScreen = () => {
+    UseProtectedPages()
+
+   
+
     return (
         <div>
-            <Header/>
-        <ContainerFather>
+            <Header />
+            <ContainerFather>
 
-            <ContainerOfPost>
-                <UserNameContainer>
-                    <h5>UserName</h5>
-                </UserNameContainer>
-                <div>
-                    <textarea placeholder={"Texto do post "} />
-                </div>
-                <ButtonAndCommentSection>
+                <ContainerOfPost>
+                    <UserNameContainer>
+                        <h5>UserName</h5>
+                    </UserNameContainer>
                     <div>
-                        <button><img height={10} src={"https://image.flaticon.com/icons/png/128/44/44674.png"} /></button>
+                        <textarea placeholder={"Texto do post "} />
+                    </div>
+                    <ButtonAndCommentSection>
+                        <div>
+                            <button><img height={10} src={"https://image.flaticon.com/icons/png/128/44/44674.png"}  alt={"seta para cima, simbolizando voto positivo"}/></button>
 
-                        <button><img height={10} src={"https://image.flaticon.com/icons/png/128/44/44698.png"} /></button>
+                            <button><img height={10} src={"https://image.flaticon.com/icons/png/128/44/44698.png"}  alt={"seta para baixo, simbolizando voto negativo"}/></button>
+                        </div>
+
+                        <h6>Quatidade de comentários</h6>
+                    </ButtonAndCommentSection>
+                </ContainerOfPost>
+
+                <ContainerOfYourComment>
+                    <div>
+                        <textarea placeholder={"Escreva seu comentário"} />
+                    </div>
+                    <div>
+                        <button>
+                            Comentar
+                        </button>
+                    </div>
+                </ContainerOfYourComment>
+
+                <ContainerOfPeopleComent>
+                    <UserNameContainer>
+                        <h5>UserName</h5>
+                    </UserNameContainer>
+
+                    <div>
+                        <textarea placeholder={"texto do comentário"} />
                     </div>
 
-                    <h6>Quatidade de comentários</h6>
-                </ButtonAndCommentSection>
-            </ContainerOfPost>
+                    <button><img height={10} src={"https://image.flaticon.com/icons/png/128/44/44674.png"}  alt={"seta para cima, simbolizando voto positivo"}/></button>
 
-            <ContainerOfYourComment>
-                <div>
-                    <textarea placeholder={"Escreva seu comentário"} />
-                </div>
-                <div>
-                    <button>
-                        Comentar
-                    </button>
-                </div>
-            </ContainerOfYourComment>
+                    <button><img height={10} src={"https://image.flaticon.com/icons/png/128/44/44698.png"}  alt={"seta para baixo, simbolizando voto negativo"}/></button>
+                </ContainerOfPeopleComent>
 
-            <ContainerOfPeopleComent>
-            <UserNameContainer>
-                    <h5>UserName</h5>
-                </UserNameContainer>
-
-                <div>
-                    <textarea placeholder={"texto do comentário"} />
-                </div>
-                
-                <button><img height={10} src={"https://image.flaticon.com/icons/png/128/44/44674.png"} /></button>
-
-                <button><img height={10} src={"https://image.flaticon.com/icons/png/128/44/44698.png"} /></button>
-            </ContainerOfPeopleComent>
-
-        </ContainerFather>
+            </ContainerFather>
         </div>
     );
 };

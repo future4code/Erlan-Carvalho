@@ -4,9 +4,12 @@ export const ContainerFather = Styled.div`
 display:flex;
 flex-direction:column;
 align-items:center;
+margin-bottom:5vh;
+
 `
 export const ContainerOfPost = Styled.div`
 border:solid black 1px;
+margin-top:15vh ;
 margin-bottom:2vh;
 width:40vw;
 textarea{
