@@ -11,7 +11,7 @@ img{
     margin-left:auto;
     margin-right:auto;
     height:70vh;
-    width:60vw;
+    width:40vw;
 } 
 `
 export const ButtonOfBrand = Styled.button`

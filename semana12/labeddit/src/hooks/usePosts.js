@@ -7,5 +7,7 @@ const UsePost = (initialState) =>{
     
     return [posts, setPosts] 
 
+    
+
 }
 export default UsePost;

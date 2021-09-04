@@ -2,7 +2,9 @@ import React, { useEffect } from 'react';
 import Header from '../../components/header/Header.js';
 import useForms from '../../hooks/UseForms.js';
 import UsePost from '../../hooks/usePosts.js';
+import {useHistory} from 'react-router-dom';
 import { UseProtectedPages } from '../../hooks/UseProtectedPages.js';
+import { goToPost } from '../../routes/Coordinator.js';
 import { createPost } from '../../services/contentCreationRequests.js';
 import { getThePeoplePosts } from '../../services/contentViewRequests.js';
 import {
@@ -15,23 +17,32 @@ import {
 export default function FeedScreen() {
     UseProtectedPages()
 
+    const [posts, setPosts] = UsePost([])
+
     const [forms, onChange, clear] = useForms({
         title: "",
         body: ""
     })
 
-    const submitYourPost = (event) => {
-        event.preventDefault()
-        createPost(forms, clear)
-    }
+    const history = useHistory()
 
-
-    const [posts, setPosts] = UsePost([])
 
     useEffect(() => {
         getThePeoplePosts(setPosts)
     }, [])
 
+
+
+    const submitYourPost = (event) => {
+        event.preventDefault()
+        createPost(forms, clear, setPosts)
+    }
+
+
+    const goToSpecificPostPage = (id) => {
+        goToPost(history, id)
+
+    }
     const renderPeoplePost = posts.map((getPosts) => {
         return (
 
@@ -44,7 +55,7 @@ export default function FeedScreen() {
                 <u><h5>{getPosts.title}</h5></u>
 
                 <BoxOfPeopleTextPost>
-                    <button> <p>{getPosts.body}</p></button>
+                    <button onClick={()=>goToSpecificPostPage(getPosts.id)}> <p>{getPosts.body}</p></button>
                 </BoxOfPeopleTextPost>
 
                 <SectionOfButtonsAndCommentsQuantity>
@@ -64,6 +75,7 @@ export default function FeedScreen() {
             </BoxOfContentOfTheFeed>
         );
     });
+  
 
     return (
         <div>
@@ -87,7 +99,7 @@ export default function FeedScreen() {
                 </YourPostingBox>
 
                 {renderPeoplePost}
-                
+
             </ContainerFather>
         </div >
     );
