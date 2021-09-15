@@ -13,30 +13,29 @@ const GamePage = () => {
 
     const [position, setPosition] = useCardsPosition(false)
 
-    const turnTheCard = () => {
-        if (!position) {
-            setPosition(theCards)
-        } else {
-            setPosition(setTheCards(theCards.map((back) => {
-                return (
-                    <div key={back.name}>
-                        <CardInButtonWay> <img src={IMAGEBACKCARD_URL + back.image}
-                            alt={"Imagem de fundo das cartas"} /></CardInButtonWay>
-                    </div>
-                )
-            })))
-        }
-    }
 
     useEffect(() => {
         getCards(setTheCards)
     }, [])
 
+    const handlePosition = () => {
+        setPosition(true)
+    }
+
+
     const renderCards = theCards.map((item) => {
         return (
             <div key={item.name}>
-                <h4>{item.name}</h4>
-                <CardInButtonWay> <img src={IMAGE_URL + item.image} alt={"Imagem de carta"} /></CardInButtonWay>
+
+                <CardInButtonWay> <h4>{item.name}</h4> <img src={IMAGE_URL + item.image} alt={"Imagem de carta"} /></CardInButtonWay>
+            </div>
+        );
+    });
+
+    const renderBackCards = theCards.map((item) => {
+        return (
+            <div key={item.name}>
+                <CardInButtonWay > <img src={IMAGEBACKCARD_URL} alt={"Imagem de fudno das cartas"} /></CardInButtonWay>
             </div>
         );
     });
@@ -44,8 +43,10 @@ const GamePage = () => {
     return (
         <div>
             <Header>The Tarot</Header>
-            <StartAndShuffleButtonContainer> <button onClick={turnTheCard}>Começar</button><button>Embaralhar</button></StartAndShuffleButtonContainer>
-            <CardContainer>{renderCards}</CardContainer>
+            <StartAndShuffleButtonContainer> <button onClick={handlePosition}>Começar</button><button>Embaralhar</button></StartAndShuffleButtonContainer>
+
+            <CardContainer>{position ? renderBackCards : renderCards}
+            </CardContainer>
         </div>
     );
 };
