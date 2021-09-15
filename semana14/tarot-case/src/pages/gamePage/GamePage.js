@@ -1,20 +1,20 @@
-import React, { useState, useEffect } from 'react';
+import React, {useState, useEffect} from 'react';
 import axios from 'axios';
-import { imagesUrl } from '../../constants/Urls'
-import { Header } from '../../components/StyledHeader';
-import { CardContainer, CardInButtonWay, StartButtonContainer } from './Styled';
+import {IMAGE_URL} from '../../constants/Urls'
+import {Header} from '../../components/StyledHeader';
+import {CardContainer, CardInButtonWay, StartButtonContainer } from './Styled';
 
 
 const GamePage = () => {
-    const [cards, setCard] = useState([])
+    const [theCards, setTheCards] = useState([])
 
     const getCards = () => {
-        const tarotCards = "tarot.json"
-        axios.get(tarotCards)
+        // const tarotCards = "tarot.json"
+        axios.get("tarot.json")
             .then((response) => {
-                setCard(response.data.cards)
+                setTheCards(response.data.cards)
             }).catch((error) => {
-                console.log("deu erro", error.response.data)
+                console.log("deu erro", error.response)
             })
     }
 
@@ -22,11 +22,11 @@ const GamePage = () => {
         getCards()
     }, [])
 
-    const renderCards = cards.map((item) => {
+    const renderCards =  theCards.map((item) => {
         return (
             <div key={item.name}>
                 <h4>{item.name}</h4>
-                <CardInButtonWay> <img src={`${imagesUrl} ${item.image}`} alt={"Imagem de carta"} /></CardInButtonWay>
+                <CardInButtonWay> <img src={IMAGE_URL+item.image} alt={"Imagem de carta"} /></CardInButtonWay>
             </div>
         );
     });

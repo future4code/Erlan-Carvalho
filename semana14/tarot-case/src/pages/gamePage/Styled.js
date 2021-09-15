@@ -7,15 +7,23 @@ align-items:center;
 grid-template-columns:1fr 1fr 1fr 1fr ;
 `
 export const CardInButtonWay = Styled.button`
-border:solid black 1px;
+border:none;
+background-color:white;
 height:30vh; 
 width:10vw;
 margin-bottom:15vh;
 margin-left:2vw;
 &:hover{
     cursor:pointer;
-    transform: scale(2.2);
+    transform: scale(1.7);
         transition: all 0.5s; 
+        margin-right:18vw;
+        margin-left:8vw;
+        margin-top:7vh;
+}
+img{
+    height:30vh;
+    width:15vw;
 }
 `
 export const StartButtonContainer= Styled.div`
