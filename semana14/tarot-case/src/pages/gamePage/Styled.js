@@ -4,36 +4,50 @@ export const CardContainer = Styled.div`
 display:grid;
 justify-items:center;
 align-items:center;
-grid-template-columns:1fr 1fr 1fr 1fr ;
-margin-right:5vw;
+grid-template-columns:1fr 1fr 1fr 1fr 1fr 1fr ;
+
 `
-export const CardInButtonWay = Styled.button`
-border:solid black 1px;
-border-radius:10%;
+export const BoxOfTheFrontCards = Styled.div`
+align-items:center;
 background-color:white;
 height:45vh; 
 width:15vw;
-margin-bottom:10vh;
-margin-left:2vw;
+margin-bottom:13vh;
 background-image:linear-gradient(to bottom,white,silver,black);
-&:hover{
-    cursor:pointer;
-    transform: scale(1.2);
-        transition: all 0.2s; 
-        margin-right:5vw;
-        margin-left:8vw;
-        margin-top:10vh;
-        margin-bottom:15vh;
-}
 img{
-    height:30vh;
-    width:10vw;
+    height:45vh;
+    width:15vw;
+    &:hover{
+        cursor:pointer;
+    }
 }
 h4{
     text-align:center;
 }
 `
-export const StartAndShuffleButtonContainer= Styled.div`
+
+export const CardInButtonWay = Styled.button`
+border:none;
+background:none;
+align-items:center;
+background-color:white;
+height:45vh; 
+width:15vw;
+&:hover{
+    cursor:pointer;
+    transform: scale(1.2);
+        transition: all 0.2s; 
+        margin-right:2vw;
+        margin-left:1vw;
+}
+img{
+    height:45vh;
+    width:15vw;
+}
+
+
+`
+export const StartAndRestartButtonContainer= Styled.div`
 height:8vh;
 margin:5vh;
 display:flex;
@@ -55,4 +69,14 @@ button{
         transition: all 0.5s; 
     }
 }
+`
+export const ConatinerFatherOfThePopUp = Styled.div`
+display:flex;
+`
+
+export const DescriptionContainer = Styled.div`
+margin-top:3vh;
+margin-left:3vw;
+color:white;
+
 `

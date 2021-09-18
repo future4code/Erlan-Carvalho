@@ -1,53 +1,102 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { getCards } from '../../services/UseRequesToGetCards';
 import { IMAGE_URL, IMAGEBACKCARD_URL } from '../../constants/Urls'
 import { Header } from '../../components/StyledHeader';
-import { CardContainer, CardInButtonWay, StartAndShuffleButtonContainer } from './Styled';
+import { CardContainer, CardInButtonWay, StartAndRestartButtonContainer, BoxOfTheFrontCards, ConatinerFatherOfThePopUp, DescriptionContainer } from './Styled';
 import { useCards } from '../../hooks/useCards';
-import { useCardsPosition } from '../../hooks/useCardspostion';
+import Popup from '../../services/popUpService/popUpAction'
+import ReactCardFlip from 'react-card-flip';
 
 
 const GamePage = () => {
 
     const [theCards, setTheCards] = useCards([])
 
-    const [position, setPosition] = useCardsPosition(false)
+    const [appear, setAppear] = useState(false)
+
+    const [isFlipped, setIsFlipped] = useState(false)
 
 
     useEffect(() => {
         getCards(setTheCards)
-    }, [])
+    })
 
-    const handlePosition = () => {
-        setPosition(true)
+
+    const alternateTheAppearingOfThePopUp = (name) => {
+        setAppear(!appear)
+    }
+
+    const handleFlipCard = () => {
+        setIsFlipped(!isFlipped)
     }
 
 
-    const renderCards = theCards.map((item) => {
-        return (
-            <div key={item.name}>
 
-                <CardInButtonWay> <h4>{item.name}</h4> <img src={IMAGE_URL + item.image} alt={"Imagem de carta"} /></CardInButtonWay>
-            </div>
-        );
-    });
-
-    const renderBackCards = theCards.map((item) => {
+    const showTheEntireCards = theCards && theCards.map((item) => {
         return (
-            <div key={item.name}>
-                <CardInButtonWay > <img src={IMAGEBACKCARD_URL} alt={"Imagem de fudno das cartas"} /></CardInButtonWay>
-            </div>
-        );
-    });
+            <ReactCardFlip key={item.name} isFlipped={isFlipped} flipDirection="horizontal">
+                <div>
+                    <BoxOfTheFrontCards>
+                        <h4>{item.name}</h4>
+                        <img onClick={alternateTheAppearingOfThePopUp} src={IMAGE_URL + item.image} alt={"Imagem de carta"} />
+                    </BoxOfTheFrontCards>
+                </div>
+
+                <div onClick={() => setIsFlipped((prev) => !prev)}>
+                    <CardInButtonWay >
+                        <img src={IMAGEBACKCARD_URL} alt={"Imagem de fundo das cartas"} />
+                    </CardInButtonWay>
+                </div>
+            </ReactCardFlip>
+
+        )
+    })
+
+    const shuffleCards = () => {
+        for (let i = theCards.length - 1; i > 0; i--) {
+            let j = Math.floor(Math.random() * i);
+            let temp = theCards[i];
+            theCards[i] = theCards[j];
+            theCards[j] = temp;
+        }
+
+    }
+
 
     return (
         <div>
-            <Header>The Tarot</Header>
-            <StartAndShuffleButtonContainer> <button onClick={handlePosition}>Começar</button><button>Embaralhar</button></StartAndShuffleButtonContainer>
 
-            <CardContainer>{position ? renderBackCards : renderCards}
+            <Header>The Tarot</Header>
+            <StartAndRestartButtonContainer>
+                <button onClick={handleFlipCard}>{isFlipped ? <p>Reiniciar </p> : <p onClick={shuffleCards}>Iniciar e Embaralhar </p>}
+                </button>
+            </StartAndRestartButtonContainer>
+
+
+
+            <CardContainer>
+                { showTheEntireCards}
             </CardContainer>
-        </div>
+
+
+
+            {
+                appear && <Popup content={<ConatinerFatherOfThePopUp>
+                    <div>
+                        {showTheEntireCards}
+                    </div>
+                    <DescriptionContainer>
+                        <h3>Descrição </h3  >
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius et beatae molestias voluptate repudiandae veniam quo suscipit doloremque, recusandae nisi dolorem dolores ullam debitis autem placeat dicta, maiores doloribus commodi! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius et beatae molestias voluptate repudiandae veniam quo suscipit doloremque, recusandae nisi dolorem dolores ullam debitis autem placeat dicta, maiores doloribus commodi! recusandae nisi dolorem dolores recusandae nisi dolorem dolores
+                        </p>
+                    </DescriptionContainer>
+                </ConatinerFatherOfThePopUp>}
+                    closeThePopUp={alternateTheAppearingOfThePopUp} />
+            }
+
+        </div >
+
     );
 };
 export default GamePage;
