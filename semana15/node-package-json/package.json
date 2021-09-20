@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "soma": "clear && node ./soma.js "
+    "soma": "clear && node ./soma.js ",
+    "novaTarefa": "clear && node ./tarefas.js"
   
   },
   "keywords": [
