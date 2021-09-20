@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "soma": "clear && node ./soma.js ",
-    "novaTarefa": "clear && node ./tarefas.js"
+    "operacao": "clear && node ./sum.js ",
+    "novaTarefa": "clear && node ./tasks.js",
+    "exercicio1": "clear && node ./firstExercise.js"
   
   },
   "keywords": [
