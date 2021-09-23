@@ -12,6 +12,7 @@ app.listen(3003, () => {
 });
 
 
+
 app.get("/countries", (req: Request, res: Response) => {
     const result = countries.map((nation) => {
         name: nation.name
@@ -20,6 +21,29 @@ app.get("/countries", (req: Request, res: Response) => {
 
     res.status(200).send(result)
 })
+
+
+app.get("/countries/search", (req: Request, res: Response) => {
+
+    try {
+        const result = countries.filter((nation) => {
+            return nation.name.includes(req.query.name as string)
+        })
+        res.status(200).send(result)
+
+        if (!result) {
+            throw new Error("Error, incorrect id");
+
+
+        }
+
+    } catch (error:any) {
+        res.status(404).send(error.message)
+    }
+
+
+})
+
 
 
 app.get("/countries/:id", (req: Request, res: Response) => {
@@ -36,20 +60,34 @@ app.get("/countries/:id", (req: Request, res: Response) => {
 
         }
 
-    } catch (error) {
-        res.status(404).end()
+    } catch (error:any) {
+        res.status(404).send(error.massage)
     }
 
 })
 
 
-app.get("/countries/search", (req: Request, res: Response) => {
-    
-    const result = countries.filter((nation) => {
-        return countries.includes(nation)
-    })
-})
 
+
+app.post("/countries/:id", (res: Response, req: Request) => {
+try{
+
+    const result = countries.map((nation)=>{
+       return( 
+           {name:nation.name,
+        capital:nation.capital}
+    )})
+    res.status(200).send(result)
+    if(!result){
+        throw new Error("Error,country not found")
+    }
+
+}catch(error:any){
+    res.status(400).send(error.massage)
+
+}
+
+})
 
 
 
