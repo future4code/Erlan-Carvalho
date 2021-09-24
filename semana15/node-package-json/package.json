@@ -1,0 +1,21 @@
+{
+  "name": "package-json",
+  "version": "1.0.0",
+  "description": "package json do projeto do dia 20 do 09 de 2021",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "operacao": "clear && node ./sum.js ",
+    "novaTarefa": "clear && node ./tasks.js",
+    "exercicio1": "clear && node ./firstExercise.js"
+  
+  },
+  "keywords": [
+    "package",
+    "json",
+    "node",
+    "npm"
+  ],
+  "author": "Erlan",
+  "license": "ISC"
+}
