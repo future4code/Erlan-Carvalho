@@ -39,7 +39,6 @@
 ###   "male"
 ### );
 
-
 ### INSERT INTO Actor (id, name, salary, birth_date, gender)
 ### VALUES(
 ###   "005", 
@@ -48,6 +47,7 @@
 ###   "1979-03-26", 
 ###   "female"
 ### );
+
 
 ### f) 
 ### INSERT INTO Actor (id, name, salary, birth_date, gender)
@@ -69,3 +69,18 @@
 
 
 ### ----------------------------------------------------------------------
+
+## 3.
+### a. SELECT id, name, salary, birth_date, gender FROM Actor WHERE gender = "female"
+
+### b. SELECT salary FROM Actor WHERE name = "Tony Ramos";
+
+### c. SELECT id, name, salary, birth_date, gender FROM Actor WHERE gender = "invalid"; Resultado -- Query Executed Sucsessfully. No Results. 0 rows affected (Query executada com sucesso. Sem resultados, 0 linhas afetadas). Isso quer dizzer que o comando está correeto, mas pelo fato de nenhum valor chamado "invalid" ter sido inserido na tabela, ele retorna essa resposta. Falando que naão tem resultados e que nenhuma linha foi afetada.
+
+### d. SELECT id, name, salary, birth_date, gender FROM Actor WHERE salary <= 500000
+
+### e. unknown column 'nome' in field list - coluna desconhecida 'nome' na lista de campos, esse erro significa que o MySQL não reconhece coluna chamada'nome' na lista de campos, ou seja o erro é que em vez de estar 'name' como coluna está escrito 'nome', portanto para corrigir basta fazer essa alteração. SELECT id, name from Actor WHERE id = "002"
+
+
+
+
