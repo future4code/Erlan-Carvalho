@@ -75,3 +75,23 @@
 
 # ----------------------------------------------------------------------------------------------------------------------------------------------------
 
+## 6.
+
+### a. ALTER TABLE Movies ADD playing_limit_date DATE;
+
+### b. ALTER TABLE Movies CHANGE rating rating float;
+
+### c. UPDATE Movies
+### SET playing_limit_date = "Em Cartaz"
+### WHERE name = "Se Eu Fosse Você";
+### 
+### UPDATE Movies 
+### SET playing_limit_date = "Fora de Cartaz"
+### WHERE name = "Doce De mãe";
+
+### d. DELETE FROM Movies WHERE id = "003";
+### Resposta do MySQL - Query executed sucsessfully. No resulst. 0 rows affected. -- Query executada com sucesso. Sem resultados. 0 linhas affetadas. Ou seja, a query foi lida e comreendida pelo MySQL, porém pelo fato de não exitir tal id, ela nos retorna essa mensgame nos falando que a query foi executada com sucesso mas não houve nenhum resultado e nenhuma linha foi afetada.
+
+# ----------------------------------------------------------------------------------------------------------------------------------------------------
+
+
