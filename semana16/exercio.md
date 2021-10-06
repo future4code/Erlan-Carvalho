@@ -171,4 +171,15 @@
 
 # ------------------------------------------------------------------------
 
+## 7.
+
+### a. SELECT * FROM Movies WHERE name LIKE "%Vida%";
+
+### b. SELECT * FROM Movies WHERE name LIKE "%TERMO DE BUSCA%" OR sinopse LIKE "%TERMO DE BUSCA%";
+
+### c. SELECT * FROM Movies WHERE release_date < CURDATE(); 
+
+### d. SELECT * FROM Movies  WHERE release_date < CURDATE() AND name LIKE "%TERMO DE BUSCA%" OR sinopse LIKE "%TERMO DE BUSCA %" AND rating > 7 
+
+# --------------------------------------------------------------------------
 
