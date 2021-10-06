@@ -9,3 +9,35 @@
 ### c. Se esse comando(ALTER TABLE Actor CHANGE gender gender VARCHAR(255);) fosse rodado, ele alteraria a capaidade que o tipo "VARCHAR" aceitaria, que está como 6 e passaria a ser 255.
 
 ### d. ALTER TABLE Actor CHANGE gender gender VARCHAR(100);
+
+# ----------------------------------------------------------------------------------------------------------------------------------------------------
+
+## 2.
+
+### a. 
+### UPDATE Actor 
+### SET name = "Camila Pitanga", birth_date = "1977-06-14"
+### Where id = "003";
+
+ ### b. 
+### UPDATE Actor 
+### SET name = "JULIANA PAES" 
+### WHERE name = "Juliana Paes";
+### 
+### UPDATE Actor 
+### SET name = "Juliana Paes"
+### WHERE name = "JULIANA PAES";
+
+### c. UPDATE Actor
+### SET name = "Leandra Leal", salary = 320000 , birth_date = "1982-09-08", 
+### gender = "female"
+### WHERE id = "005";
+
+### d. query criada - UPDATE Actor 
+### SET name = "Antônio Fagundes"
+### WHERE id = "013";
+### Resposta do MySQL - Query executed sucsessfully. No resulst. 0 rows affected. -- Query executada com sucesso. Sem resultados. 0 linhas affetadas. Ou seja, a query foi lida e comreendida pelo MySQL, porém pelo fato de não exitir tal id, ela nos retorna essa mensgame nos falando que a query foi executada com sucesso mas não houve nenhum resultado e nenhuma linha foi afetada.
+
+# ----------------------------------------------------------------------------------------------------------------------------------------------------
+
+
