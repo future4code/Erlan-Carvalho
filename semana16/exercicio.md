@@ -93,5 +93,21 @@
 ### Resposta do MySQL - Query executed sucsessfully. No resulst. 0 rows affected. -- Query executada com sucesso. Sem resultados. 0 linhas affetadas. Ou seja, a query foi lida e comreendida pelo MySQL, porém pelo fato de não exitir tal id, ela nos retorna essa mensgame nos falando que a query foi executada com sucesso mas não houve nenhum resultado e nenhuma linha foi afetada.
 
 # ----------------------------------------------------------------------------------------------------------------------------------------------------
+## 7.
+
+### a. SELECT COUNT (*) FROM Movies WHERE playing_limit_date = "Em Cartaz "AND  rating > 7.5;
+
+### b. SELECT AVG(rating) FROM Movies; 
+
+### c. SELECT COUNT(*) FROM Movies WHERE playing_limit_date = "Em Cartaz";
+
+### d. SELECT COUNT (*) FROM Movies WHERE playing_limit_date = "Irá lançar"; 
+
+### e. SELECT MAX(rating) FROM Movies;
+
+### f. SELECT MIN(rating) FROM Movies;
+
+# ----------------------------------------------------------------------------------------------------------------------------------------------------
+
 
 
