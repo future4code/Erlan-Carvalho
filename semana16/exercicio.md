@@ -109,5 +109,15 @@
 
 # ----------------------------------------------------------------------------------------------------------------------------------------------------
 
+## 8.
+
+### a. SELECT (*) FROM Movies ORDER BY name ASC;
+
+### b. SELECT (*) FROM Movies ORDER BY name ASC LIMIT 5;
+
+### c. SELECT * FROM Movies Where playing_limit_date = "Em Cartaz" LIMIT 3; 
+
+### d.  SELECT * FROM Movies  ORDER BY rating DESC LIMIT 3; 
+# ----------------------------------------------------------------------------------------------------------------------------------------------------
 
 
