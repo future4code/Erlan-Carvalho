@@ -61,3 +61,17 @@
 # ----------------------------------------------------------------------------------------------------------------------------------------------------
 
 
+## 5.
+
+### a. Essa utlima query utiliza o modificador GROUP BY que por sua vez aglutina items de uma coluna em relação a outra, e na situação da query, a quantidade de atores atrizes foram agrupadas de acordo com o gênero.
+
+### b. SELECT SUM(salary) FROM Actor; 
+
+### c. SELECT * FROM Actor ORDER BY salary DESC;
+
+### d. SELECT * FROM Actor ORDER BY salary DESC LIMIT 3;
+
+### e. SELECT AVG(salary),gender FROM Actor GROUP BY gender;
+
+# ----------------------------------------------------------------------------------------------------------------------------------------------------
+
