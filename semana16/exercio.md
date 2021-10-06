@@ -160,3 +160,15 @@
 ### );
 
 # ------------------------------------------------------------------------
+
+## 6.
+
+### a. SELECT id, name, sinopse, rating FROM Movies WHERE id LIKE "004";
+
+### b. SELECT * FROM Movies WHERE name LIKE "Se Eu Fosse Você";
+
+### c. SELECT id, name,sinopse FROM Movies WHERE rating >= 7;
+
+# ------------------------------------------------------------------------
+
+
