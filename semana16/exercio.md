@@ -7,7 +7,7 @@
 
 ### c) R - o Comando DESCRIBE <nome-da-tabela> mostra toda a estrutura dos dados dessa tabela. Informações como o tipo de cada coluna, seus dados e etc.
 
-## -----------------------------------------------------------------------
+# ------------------------------------------------------------------------
 
 ## 2.
 
@@ -68,7 +68,7 @@
 ### );
 
 
-### ----------------------------------------------------------------------
+## -----------------------------------------------------------------------
 
 ## 3.
 ### a. SELECT id, name, salary, birth_date, gender FROM Actor WHERE gender = "female"
@@ -81,6 +81,22 @@
 
 ### e. unknown column 'nome' in field list - coluna desconhecida 'nome' na lista de campos, esse erro significa que o MySQL não reconhece coluna chamada'nome' na lista de campos, ou seja o erro é que em vez de estar 'name' como coluna está escrito 'nome', portanto para corrigir basta fazer essa alteração. SELECT id, name from Actor WHERE id = "002"
 
+# ------------------------------------------------------------------------
 
+## 4.
+
+### a. A query citada utiliza comandos para que delimitam o resultado final final, que neste caso é pegar todas os items da tabela Actor que possuem nome(name) que começe com a letra "A" ou (OR) "J" e (AND) possua o salário(salary) maior (>) que 300000.
+
+### b. SELECT * FROM Actor WHERE name NOT LIKE "A%" AND salary > 350000;
+
+### c. SELECT * FROM Actor WHERE name LIKE "%G%" AND name LIKE "%g%";
+
+### d.  
+### SELECT * FROM Actor WHERE name LIKE "%A%" or name LIKE "%a%" OR name LIKE 
+### "%G%" OR name LIKE "%g%" 
+### AND salary BETWEEN 350000 AND 900000; 
+### 
+
+# ------------------------------------------------------------------------
 
 
