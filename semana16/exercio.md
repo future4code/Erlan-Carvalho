@@ -83,8 +83,38 @@
 
 # ------------------------------------------------------------------------------------------------------------------------------------------------------
 
+## 4. 
 
-
+### a. app.put("/actor", async (req: Request, res: Response) => {
+###     try {
+###         const updateSalary = await updateActorSalary(
+###             req.body.id,
+###             req.body.salary,
+###         )
+###         res.status(200).send("Alteração feita com sucesso")
+### 
+###     } catch (error: any) {
+###         res.status(400).send({ message: error.mmessage })
+###     }
+### }) 
+ 
+### b. 
+### app.delete("/actor/:id", async (req: Request, res: Response) => {
+### 
+###     try {
+###         
+###         await deleteActor(
+###             req.params.id
+###         )
+###         res.status(200).send("Ator deletado com sucesso")
+### 
+### 
+###     } catch (error: any) {
+###         res.status(400).send({ message: error.message })
+### 
+###     }
+### 
+### })
 
 
 
