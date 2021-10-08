@@ -1,8 +1,0 @@
-.env
-build
-node_modules
-package-lock.json
-tsconfig.json
-package.json
-src
-.gitignore
