@@ -52,6 +52,40 @@
 
 # ------------------------------------------------------------------------------------------------------------------------------------------------------
 
+## 3.
+ 
+### a.  app.get("/actor/:id", async (req: Request, res: Response) => {
+###     try {
+###         const id = req.params.id
+###         const actor = await getActorById(id);
+### 
+###         res.status(200).send(actor)
+### 
+###     } catch (error: any) {
+###         res.status(400).send({ message: error.message })
+### 
+###     }
+### })
+
+
+### b. app.get("/actor/", async (req: Request, res: Response) => {
+
+###     try {
+###         const actorQauntityByGender = await getActorByGender(req.query.### gender as string);
+### 
+###         res.status(200).send({ quantity: actorQauntityByGender, });
+### 
+###     } catch (error: any) {
+###         res.status(400).send({ message: error.message })
+###     }
+### 
+### })
+
+# ------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
 
 
  
