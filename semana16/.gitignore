@@ -5,4 +5,4 @@ package-lock.json
 tsconfig.json
 package.json
 src
-.gitignore
+gitignore
