@@ -17,5 +17,43 @@
 ###   return count;
 ### }
 
+# ------------------------------------------------------------------------------------------------------------------------------------------------------
+
+## 2.
+
+### a. const updateActorSalary = async(
+###     id:string,
+###     salary:number,
+### ):Promise<void>=>{
+###     await connection("Actor")
+###     .update({
+###         salary:salary,
+###     }).where
+###       ( "id",id);
+### };
+
+### b. const deleteActor = async (
+###       id:string,
+###   ):Promise<void> =>{
+###       await connection("Actor")
+###       .delete()
+###       .where("id",id)
+###   }
+
+### c.  const avarageSalaryByGender = async(
+###    gender:string, salary:number,):Promise<any>=>{
+###       const result = await connection("Actor")
+###        .select()
+###        .avg("SSAalary as avarage")
+###        .where({gender})
+###
+###        return result [0].avarage
+###    }
+
+# ------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+ 
 
 
