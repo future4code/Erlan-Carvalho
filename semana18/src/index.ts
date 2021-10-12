@@ -51,5 +51,3 @@ class Transaction {
 }
 const getTransaction = new Transaction("Transação financeira,", 50, "2021/10/10")
 console.log(getUserAccount, getTransaction )
-
-/
