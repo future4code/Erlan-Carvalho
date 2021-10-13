@@ -146,9 +146,12 @@
 #### Não foi possível deletar um ator que possui relação com outra tabela, justamente por esse fato. Por conta disso, ser uma linha pai, fez com que não fosse possível deletá-la.
 # ------------------------------------------------------------------------------------------------------------------------------------------------------
 
+## 3.
 
+### a. R - A query exibe todas as cvolunas da tabela Movies e junta(join) com as coolunas da tabela Rating que está relacionada com a tabela Movies pelo seu id. O operador ON significa dizer de onde vem o dado estrangeiro.
 
-
-
+### b. R - 
+#### SELECT name, movie_id, rate FROM Movies
+#### INNER JOIN Rating ON Movies.id = Rating.movie_id;
 
 
