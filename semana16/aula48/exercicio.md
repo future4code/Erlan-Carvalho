@@ -73,3 +73,82 @@
 #### Essa resposta foi devolvida pelo fato deu ter apagado a coluna de avaliação (rating), fazendo com que ao tentar apagar um filme que possua avaliação seja impossível, pois não exeiste mais coluna de avaliação.
 
 # ------------------------------------------------------------------------------------------------------------------------------------------------------
+
+## 2 . 
+
+### a. R - Essa tabela representa a reçaão entre os atores e os filmes, possuindo duas colunas que são chaves estrangeiras que se relacionam com a tabela 'Actor' e a tabela 'Movies'.
+
+### b. R - 
+#### INSERT INTO MovieCast(movie_id, actor_id)
+#### VALUES(
+#### "001",
+#### "001"
+#### );
+#### 
+#### INSERT INTO MovieCast(movie_id, actor_id)
+#### VALUES(
+#### "001",
+#### "002"
+#### );
+#### 
+#### INSERT INTO MovieCast(movie_id, actor_id)
+#### VALUES(
+#### "002",
+#### "008"
+#### );
+#### 
+#### INSERT INTO MovieCast(movie_id, actor_id)
+#### VALUES(
+#### "004",
+#### "009"
+#### );
+#### 
+#### INSERT INTO MovieCast(movie_id, actor_id)
+#### VALUES(
+#### "005",
+#### "007"
+#### );
+#### 
+#### INSERT INTO MovieCast(movie_id, actor_id)
+#### VALUES(
+#### "004",
+#### "001"
+#### );
+#### 
+#### INSERT INTO MovieCast(movie_id, actor_id)
+#### VALUES(
+#### "002",
+#### "001"
+#### );
+
+### c. R -  
+#### INSERT INTO MovieCast(movie_id, actor_id)
+#### VALUES(
+#### "009",
+#### "011"
+#### );
+
+#### Mensagem de erro devolvida :
+
+#### Error Code: 1452. Cannot add or update a child row: a foreign key #### constraint fails (`lovelace-2147276-erlan-carvalho`.`MovieCast`,
+#### CONSTRAINT `MovieCast_ibfk_1` FOREIGN KEY (`movie_id`) REFERENCES`Movies` 
+#### (`id`))
+
+#### Esse erro é devolvido pelo fato do MySQL procurar os ids passasdos na query da tabela MovieCats nas tabelas Movies e Actor e não encontar.
+
+
+### d. R - Foi devoldivo um erro, que foi :
+#### Error Code: 1451. Cannot delete or update a parent row: a 
+#### foreign key constraint fails (`lovelace-2147276-erlan-carvalho`.
+#### `MovieCast`, 
+#### CONSTRAINT `MovieCast_ibfk_2` FOREIGN KEY (`actor_id`) REFERENCES `Actor` 
+#### (`id`))
+#### Não foi possível deletar um ator que possui relação com outra tabela, justamente por esse fato. Por conta disso, ser uma linha pai, fez com que não fosse possível deletá-la.
+# ------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
