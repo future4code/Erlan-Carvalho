@@ -2,6 +2,9 @@ import { User } from "./classes/user";
 import { Customer } from "./classes/customers";
 import { Client } from "./interfaces/client";
 import { Place } from "./classes/place";
+import { Commerce } from "./classes/Commerce";
+import { Industry } from "./classes/Industry";
+import { Residence } from "./classes/Residence";
 
 const user1 = new User("001", "joca@gmail.com", "joca", "123456");
 console.log(user1)
@@ -48,4 +51,16 @@ console.log(client)
 
 // const place1 = new Place("4020000")
 
+
+
+//3º de polimorfismo 
+const seuZeStore = new Commerce(3,"42500000")
+seuZeStore.getCep()
+
+const duMetalurgia = new Industry(70,"50800000" )
+duMetalurgia.getCep()
+
+const seuZePlace = new Residence(5, "48300000")
+console.log(seuZePlace)
+seuZePlace.getCep()
 

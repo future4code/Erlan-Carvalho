@@ -9,3 +9,4 @@
 ### a) R - const place1 = new Place("4020000"). O typescript fala que não pode criar instâncias de classe abtratas.
 
 ### b) R - utilizando a instância de uma classe filha(sub-classe ) da classe abstrata place.
+
