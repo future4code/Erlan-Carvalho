@@ -1,7 +1,5 @@
 import { User } from "./classes/user";
-import { Costumer } from "./classes/costumers";
-
-
+import { Customer } from "./classes/customers";
 
 const user1 = new User("001", "joca@gmail.com", "joca", "123456");
 console.log(user1)
@@ -16,12 +14,12 @@ console.log(user2)
 // b) R - A mensagem "Chamando o construtor da classe User" aparece de forma proporcional à quantidade de vezes que  uma instância é criada, tendo em vista que pelo fato desta mensagem está num console.log dentro constructor, faz com esta seja impressa toda vez que uma nova instância seja criada.
 
 
-const cliente1 = new Costumer("001", "marcos@gmail.com", "Marcos", "12345678", "25142355")
+const cliente1 = new Customer("001", "marcos@gmail.com", "Marcos", "12345678", "25142355")
 // 4. 
 cliente1.introduceYourself()
 console.log(cliente1)
 
-const cliente2 = new Costumer("002", "Helena@gmai.com", "Helena", "234567", "154463454")
+const cliente2 = new Customer("002", "Helena@gmai.com", "Helena", "234567", "154463454")
 cliente2.introduceYourself()
 console.log(cliente2)
 

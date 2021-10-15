@@ -1,6 +1,6 @@
 import { User } from "./user";
 
-export class Costumer extends User {
+export class Customer extends User {
 
 
     private creditCardNumber: string;
