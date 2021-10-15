@@ -1,7 +1,7 @@
-import { User } from "./classes/user";
+import { User } from "./classes/parentClasses/user";
 import { Customer } from "./classes/customers";
 import { Client } from "./interfaces/client";
-import { Place } from "./classes/place";
+import { Place } from "./classes/parentClasses/place";
 import { Commerce } from "./classes/Commerce";
 import { Industry } from "./classes/Industry";
 import { Residence } from "./classes/Residence";

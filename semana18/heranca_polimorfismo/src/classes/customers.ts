@@ -1,4 +1,4 @@
-import { User } from "./user";
+import { User } from "./parentClasses/user";
 
 export class Customer extends User {
 

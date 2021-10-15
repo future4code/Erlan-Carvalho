@@ -1,4 +1,4 @@
-import { Place } from "./place";
+import { Place } from "./parentClasses/place";
 
 export class Commerce extends Place {
     constructor(
