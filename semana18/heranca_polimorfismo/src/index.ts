@@ -4,6 +4,7 @@ class User {
     private name: string;
     private password: string;
 
+
     constructor(id: string, email: string, name: string, password: string) {
         console.log("Chamando o construtor da classe User")
 
@@ -22,11 +23,18 @@ class User {
     public getName() {
         return this.name
     }
+    public introduceYourself(): string  {
+        return "Olá, bom dia!"
+    }
+    
 
 }
 
-const user1 = new User("001", "joca@gmail.com", "joca", "123456")
+const user1 = new User("001", "joca@gmail.com", "joca", "123456");
+
+
 console.log(user1)
+
 
 const user2 = new User("002", "boca@gmail.com", "boca", "123456")
 console.log(user2)
@@ -59,10 +67,11 @@ class Costumer extends User {
 
 }
 
-const cliente1 = new Costumer("001", "marcos@gmail.com", "Marcos", "12345678","25142355")
+const cliente1 = new Costumer("001", "marcos@gmail.com", "Marcos", "12345678", "25142355")
+cliente1.introduceYourself()
 console.log(cliente1)
 
-const cliente2 = new Costumer("002" , "Helena@gmai.com", "Helena", "234567", "154463454")
+const cliente2 = new Costumer("002", "Helena@gmai.com", "Helena", "234567", "154463454")
 console.log(cliente2)
 
 // 2.
