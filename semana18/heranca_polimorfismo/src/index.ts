@@ -71,4 +71,9 @@ console.log(cliente2)
 
 // b) R - A mensagem "Chamando o construtor da classe User" foi impressa na mesma quantidade da frase "Chamando o construtor da classe Customer", pois a primeira fase citada faz parte do constuctor da classe pai, e pelo fato da classe filha possuir um super que referencia ao constructor da classe pai, toda vez que for criada uma instância baseada no constructor da classe filha, está também estará herdando o costructor da classe pai.
 
+// 3.
+
+// a)  R - Sim pelo fato da classe filha herdar as propriedades da classe pai que estão no presente no super, que faz referência direta ao constructor da classe pai, e como a propriedade, password está no constructor da classe pai, esta irá ser requisitada tambémm na classe filha, sendo impressa junta às demais propriedades. 
+
+
 
