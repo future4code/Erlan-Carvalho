@@ -23,8 +23,9 @@ class User {
     public getName() {
         return this.name
     }
-    public introduceYourself(): string  {
-        return "Olá, bom dia!"
+    // 5
+    public introduceYourself(): string | void  {
+        console.log(`Olá, sou ${this.name}, bom dia!`)
     }
     
 
@@ -68,10 +69,12 @@ class Costumer extends User {
 }
 
 const cliente1 = new Costumer("001", "marcos@gmail.com", "Marcos", "12345678", "25142355")
+// 4. 
 cliente1.introduceYourself()
 console.log(cliente1)
 
 const cliente2 = new Costumer("002", "Helena@gmai.com", "Helena", "234567", "154463454")
+cliente2.introduceYourself()
 console.log(cliente2)
 
 // 2.
