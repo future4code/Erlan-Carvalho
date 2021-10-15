@@ -1,6 +1,7 @@
 import { User } from "./classes/user";
 import { Customer } from "./classes/customers";
-import { Client } from "./interfaces/client"
+import { Client } from "./interfaces/client";
+import { Place } from "./classes/place";
 
 const user1 = new User("001", "joca@gmail.com", "joca", "123456");
 console.log(user1)
@@ -44,5 +45,7 @@ const client: Client = {
 
 }
 console.log(client)
+
+// const place1 = new Place("4020000")
 
 
