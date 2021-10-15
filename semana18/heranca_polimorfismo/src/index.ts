@@ -1,5 +1,6 @@
 import { User } from "./classes/user";
 import { Customer } from "./classes/customers";
+import { Client } from "./interfaces/client"
 
 const user1 = new User("001", "joca@gmail.com", "joca", "123456");
 console.log(user1)
@@ -33,5 +34,15 @@ console.log(cliente2)
 
 // a)  R - Sim pelo fato da classe filha herdar as propriedades da classe pai que estão no presente no super, que faz referência direta ao constructor da classe pai, e como a propriedade, password está no constructor da classe pai, esta irá ser requisitada tambémm na classe filha, sendo impressa junta às demais propriedades. 
 
+const client: Client = {
+    name: "André",
+    registrationNumber: 1,
+    consumedEnergy: 25,
+    calculateBill: () => {
+        return 5
+    }
+
+}
+console.log(client)
 
 
