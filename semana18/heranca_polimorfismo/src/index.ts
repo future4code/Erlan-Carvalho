@@ -1,41 +1,10 @@
-class User {
-    private id: string;
-    private email: string;
-    private name: string;
-    private password: string;
+import { User } from "./classes/user";
+import { Costumer } from "./classes/costumers";
 
 
-    constructor(id: string, email: string, name: string, password: string) {
-        console.log("Chamando o construtor da classe User")
-
-        this.id = id
-        this.email = email
-        this.name = name
-        this.password = password
-    }
-
-    public getId() {
-        return this.id
-    }
-    public getEmail() {
-        return this.email
-    }
-    public getName() {
-        return this.name
-    }
-    // 5
-    public introduceYourself(): string | void  {
-        console.log(`Olá, sou ${this.name}, bom dia!`)
-    }
-    
-
-}
 
 const user1 = new User("001", "joca@gmail.com", "joca", "123456");
-
-
 console.log(user1)
-
 
 const user2 = new User("002", "boca@gmail.com", "boca", "123456")
 console.log(user2)
@@ -46,27 +15,6 @@ console.log(user2)
 
 // b) R - A mensagem "Chamando o construtor da classe User" aparece de forma proporcional à quantidade de vezes que  uma instância é criada, tendo em vista que pelo fato desta mensagem está num console.log dentro constructor, faz com esta seja impressa toda vez que uma nova instância seja criada.
 
-
-class Costumer extends User {
-
-
-    private creditCardNumber: string;
-    public purchaseTotalValue: number = 0;
-
-
-    constructor(id: string, email: string, name: string, password: string, creditCardNumber: string) {
-
-        super(id, email, name, password)
-        console.log("Chamando o construtor da classe Customer")
-        this.creditCardNumber = creditCardNumber
-
-    }
-
-    public getCreditCardNumber() {
-        return this.creditCardNumber
-    }
-
-}
 
 const cliente1 = new Costumer("001", "marcos@gmail.com", "Marcos", "12345678", "25142355")
 // 4. 
