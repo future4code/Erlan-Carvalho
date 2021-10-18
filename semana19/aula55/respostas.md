@@ -8,3 +8,13 @@
 ### return v4()
 ### }
 
+## 2. 
+
+### a) R - o código insere na tabela de nome User elemento nas suas 3 colunas, que são id, email e password.
+
+### b) R - CREATE TABLE toDoListUser (
+### id VARCHAR (255) PRIMARY KEY,
+### userEmail VARCHAR(255) NOT NULL,
+### userPassword VARCHAR(255) NOT NULL 
+### );
+
