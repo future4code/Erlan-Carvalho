@@ -8,14 +8,22 @@ export class User {
         this.name = name;
         this.email = email;
         this.id = id;
-    
+
     }
 
-    public setId (){
+    public setId() {
         return this.id.toString()
     }
 
-    public getId(){
+    public getId() {
         return this.setId()
+    }
+
+    public getName() {
+        return this.name
+    }
+
+    public getEmail() {
+        return this.email
     }
 }
