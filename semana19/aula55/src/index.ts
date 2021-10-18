@@ -2,6 +2,7 @@ import express, { Express } from "express";
 import cors from "cors";
 import { AddressInfo } from "net";
 import knex from "knex"
+import {v4} from "uuid";
 
 const app: Express = express();
 
@@ -19,6 +20,9 @@ export const connection = knex({
     }
  
 })
+
+const id = v4()
+console.log(`generete ID:${id}`)
 
 
 
