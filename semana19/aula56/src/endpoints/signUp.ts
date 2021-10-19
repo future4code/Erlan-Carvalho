@@ -4,9 +4,12 @@ import { app } from "..";
 import { Request, Response } from "express";
 import { generateId } from "../services/generateId";
 import { generateToken } from "../services/Authenticator";
+import {generateHash} from "../services/generateHash";
 
 
-// Create ACcount Endpoint
+// Create Account Endpoint
+
+//resposta da letra b) do exercício 2
 
 app.post("/user/signup", async (req: Request, res: Response) => {
     try {
@@ -16,7 +19,9 @@ app.post("/user/signup", async (req: Request, res: Response) => {
         }
         const id = generateId()
 
-        await createUser(id, userCreatonData.email, userCreatonData.password)
+        const hash = generateHash(userCreatonData.password) as any
+
+        await createUser(id, userCreatonData.email, hash)
 
         const token = generateToken({
             id
@@ -34,4 +39,4 @@ app.post("/user/signup", async (req: Request, res: Response) => {
     } catch (error: any) {
         res.status(400).send({ message: error.message })
     }
-}) 
+})
