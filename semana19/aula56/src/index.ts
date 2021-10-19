@@ -1,6 +1,7 @@
 import express, { Express } from 'express';
 import cors from 'cors';
 import { AddressInfo } from "net";
+import { generateHash, compareGivenStringAndHash } from './services/generateHash';
 
 
 const app: Express = express();
@@ -8,6 +9,8 @@ const app: Express = express();
 app.use(express.json());
 app.use(cors());
 
+generateHash("olá")
+// console.log(compareGivenStringAndHash("lulu", `result`))
 
 
 const server = app.listen(process.env.PORT || 3003, () => {
