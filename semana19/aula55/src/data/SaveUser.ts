@@ -1,6 +1,6 @@
 import knex from "knex"
 
-// respostas dfa letra c) 
+// respostas da 2ª letra c) 
 
 
 export const connection = knex({

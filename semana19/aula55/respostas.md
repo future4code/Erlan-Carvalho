@@ -18,3 +18,8 @@
 ### userPassword VARCHAR(255) NOT NULL 
 ### );
 
+
+## 3.
+
+### a) R - o as string significa dizer que o tipo atribuído ao valor é  do tipo string.
+
