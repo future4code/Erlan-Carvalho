@@ -23,3 +23,8 @@
 
 ### a) R - o as string significa dizer que o tipo atribuído ao valor é  do tipo string.
 
+
+## 7.
+
+### a) R - Ass any está lá para dizer que a variável playload tem um valor que possui qualuer tipagem(any, boolean, string, entre outros).
+
