@@ -4,7 +4,7 @@ import { AddressInfo } from "net";
 import { generateHash, compareGivenStringAndHash } from './services/generateHash';
 
 
-const app: Express = express();
+export const app: Express = express();
 
 app.use(express.json());
 app.use(cors());
