@@ -3,7 +3,7 @@ import cors from "cors";
 import { AddressInfo } from "net";
 import { v4 } from "uuid";
 
-const app: Express = express();
+export const app: Express = express();
 
 app.use(express.json());
 app.use(cors());
