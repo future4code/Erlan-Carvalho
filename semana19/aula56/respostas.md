@@ -10,3 +10,9 @@
 ### a) R - Para realizar os testes corretamente é necessário refatorar primeiramente o endpoint de cadastro, tendo em vista que é lá que está a função que vai inserir a senha criptografada do usuário no banco de dados.
 
 ### d) R - Não pois esse endpoint não exige nenhuma informação sensível para se acessar, e a garantia para se poder acessar esse endpoint é que o usuário tenha a sua senha poi só entrando na sua conta ele vai ter acesso ao token que é gerado ao fazer um cadastro e um login, token este que é necessário(colocando no headers) para fazer o endpoint de pegar os dados do usuários.
+
+## 3.
+
+### a) R - ALTER TABLE toDoListUser
+### ADD user_Role ENUM ("normal", "admin") DEFAULT "normal"; 
+ 

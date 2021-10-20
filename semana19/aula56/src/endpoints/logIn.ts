@@ -6,9 +6,14 @@ import { generateId } from "../services/generateId";
 import { generateToken } from "../services/Authenticator";
 import { compareGivenStringAndHash } from "../services/generateHash"
 
-// Login  Endpoint
 
 // respposta da letra c) do exercício 2 
+
+// e
+
+// resposta da letra d) do exercício 3
+
+// Login  Endpoint
 
 app.post("/user/login", async (req: Request, res: Response) => {
     try {
@@ -17,27 +22,25 @@ app.post("/user/login", async (req: Request, res: Response) => {
             password: req.body.password
         }
 
-
-        const id = generateId()
-
         const user = await getUserInfo(userCreatonData.email)
 
         const token = generateToken({
-            id
+            id: user.id,
+            user_Role: user.user_Role
         })
 
-        const passwordComparationWtihHash = await compareGivenStringAndHash(userCreatonData.password, user.password )
-
-
-        res.status(200).send({ token })
+        const passwordComparationWtihHash = await compareGivenStringAndHash(userCreatonData.password, user.password)
 
         if (!req.body.email || req.body.email.indexOf("@") === -1) {
             throw new Error("Invalid email")
         }
 
-        if(!passwordComparationWtihHash){
+        if (!passwordComparationWtihHash) {
             throw new Error("invalid password")
         }
+
+        res.status(200).send({ token })
+
     } catch (error: any) {
         res.status(400).send({ message: error.message })
     }
