@@ -3,22 +3,24 @@ import { Request, Response } from "express";
 import { getUserInfoByToken } from "../action/getUserInfoByToken";
 import { getUserInfoById } from "../action/getUserById";
 
-app.get("user/profile", async (req: Request, res: Response) => {
+app.get("/user/:id", async (req: Request, res: Response) => {
     try {
+        const getTheothersUsersId = req.params.id
+
         const token = req.headers.authorization as string
 
         const validationOfToken = getUserInfoByToken(token)
 
-        const user = await getUserInfoById((validationOfToken.id))
+        const theOthersUsers = await getUserInfoById(getTheothersUsersId)
 
         if (!validationOfToken) {
-            throw new Error("Invalid token")
+            throw new Error("Invalid Token")
 
         } else {
             res.status(200).send({
-                id: user.id,
-                email: user.email,
-                userName: user.userName
+                id: theOthersUsers.id,
+                userName: theOthersUsers.name,
+                email: theOthersUsers.email
             })
         }
 
