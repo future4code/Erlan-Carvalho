@@ -1,10 +1,9 @@
-import { app } from "../index";
 import { Request, Response } from "express";
-import { generateToken, getToken } from "../services/autheticator";
+import { generateToken } from "../services/autheticator";
 import { getUserInfo } from "../action/getUserInfo";
 import { compareThePasswordWithTheHash } from "../services/encrypt";
 
-app.post("/login", async (req: Request, res: Response) => {
+export const logInEndP = async (req: Request, res: Response) => {
     try {
         const userData = ({
             email: req.body.email,
@@ -36,4 +35,4 @@ app.post("/login", async (req: Request, res: Response) => {
     } catch (error: any) {
 
     }
-})
+}

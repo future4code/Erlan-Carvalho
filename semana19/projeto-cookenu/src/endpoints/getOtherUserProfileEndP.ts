@@ -1,9 +1,8 @@
-import { app } from "../index";
 import { Request, Response } from "express";
 import { getUserInfoByToken } from "../action/getUserInfoByToken";
 import { getUserInfoById } from "../action/getUserById";
 
-app.get("/user/:id", async (req: Request, res: Response) => {
+export const getOtherUserProfileEndP = async (req: Request, res: Response) => {
     try {
         const getTheothersUsersId = req.params.id
 
@@ -13,7 +12,11 @@ app.get("/user/:id", async (req: Request, res: Response) => {
 
         const theOthersUsers = await getUserInfoById(getTheothersUsersId)
 
-        if (!validationOfToken) {
+        if(!getTheothersUsersId){   
+            throw new Error("Invalid Id")
+
+        }
+        else if (!validationOfToken) {
             throw new Error("Invalid Token")
 
         } else {
@@ -28,4 +31,4 @@ app.get("/user/:id", async (req: Request, res: Response) => {
     } catch (error: any) {
         res.status(500).send({ message: error.message })
     }
-})
+}

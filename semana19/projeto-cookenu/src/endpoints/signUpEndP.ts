@@ -1,4 +1,3 @@
-import { app } from "..";
 import { Request, Response } from "express";
 import { registerUser } from "../action/registerUser"
 import { generateId } from "../services/idCreation";
@@ -7,7 +6,7 @@ import { generateToken } from "../services/autheticator";
 
 
 //SignUP EndPoint
-app.post("/signup", async (req: Request, res: Response) => {
+export const signUpEndP =  async (req: Request, res: Response) => {
     try {
         const doTheSignUp =
         {
@@ -47,4 +46,4 @@ app.post("/signup", async (req: Request, res: Response) => {
         res.status(500).send({ message: error.message })
 
     }
-})
+}

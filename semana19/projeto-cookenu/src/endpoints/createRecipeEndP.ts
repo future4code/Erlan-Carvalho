@@ -1,10 +1,9 @@
-import { app } from "..";
 import { Request, Response } from "express";
 import { getUserInfoByToken } from "../action/getUserInfoByToken";
 import { createRecipes } from "../action/createRecipes";
 import { generateId } from "../services/idCreation";
 
-app.post("/recipes", async (req: Request, res: Response) => {
+export const createRecipeEndP = async (req: Request, res: Response) => {
     try {
         const token = req.headers.authorization as string;
 
@@ -44,4 +43,4 @@ app.post("/recipes", async (req: Request, res: Response) => {
     } catch (error: any) {
         res.status(500).send({ message: error.message })
     }
-})
+}
