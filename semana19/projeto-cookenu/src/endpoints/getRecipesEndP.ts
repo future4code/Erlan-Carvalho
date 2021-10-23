@@ -25,8 +25,8 @@ export const getRecipesEndP = async (req: Request, res: Response) => {
                 {
                     id: recipe.id,
                     recipeTitle: recipe.recipeTitle,
-                    description_prepareMode: recipe.description_prepareMode
-
+                    description_prepareMode: recipe.description_prepareMode,
+                    recipeDate:recipe.recipeDate
                 })
         }
 
