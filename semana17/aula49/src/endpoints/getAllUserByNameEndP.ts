@@ -2,6 +2,11 @@ import selectAllUsersByName from "../services/selectAllUsersByName";
 import { Request, Response } from "express";
 
 
+
+//exercício 1 
+
+// letra b)
+
 export const getAllUsersByName = async (req: Request, res: Response): Promise<void> => {
     try {
 
@@ -15,7 +20,7 @@ export const getAllUsersByName = async (req: Request, res: Response): Promise<vo
             throw new Error("No users found")
         }
 
-        res.status(200).send(users)
+        res.status(200).send({users})
 
     } catch (error: any) {
         console.log(error)

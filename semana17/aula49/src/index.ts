@@ -5,6 +5,7 @@ import { AddressInfo } from "net";
 // Endpoint to get users
 import { getAllUsers } from "./endpoints/getAllUsersEndP";
 import { getAllUsersByName } from "./endpoints/getAllUserByNameEndP";
+import { getAllUsersByNameWithQueryEndP } from "./endpoints/getAllUsersByNameWithQueryEndP";
 
 const app: Express = express();
 
@@ -18,6 +19,7 @@ app.use(cors())
 
 app.get("/user" , getAllUsers);
 app.get("/user/:name", getAllUsersByName)
+app.get("/users", getAllUsersByNameWithQueryEndP)
 
 // ###############
 // ## Endpoints ##    
