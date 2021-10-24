@@ -3,13 +3,24 @@ import cors from "cors";
 import { AddressInfo } from "net";
 import dotenv from "dotenv";
 
+// User signup endpoint
+import { signUpEndP } from "./enpoints/signUpEndP";
+
 
 const app: Express = express();
 
 app.use(express.json())
 app.use(cors())
 
+//###############
+//## Endpoints ##
+//###############
 
+app.post("/signup/user", signUpEndP)
+
+//###############
+//## Endpoints ##
+//###############
 
 dotenv.config();
 
