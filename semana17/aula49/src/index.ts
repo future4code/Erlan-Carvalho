@@ -6,6 +6,7 @@ import { AddressInfo } from "net";
 import { getAllUsers } from "./endpoints/getAllUsersEndP";
 import { getAllUsersByName } from "./endpoints/getAllUserByNameEndP";
 import { getAllUsersByNameWithQueryEndP } from "./endpoints/getAllUsersByNameWithQueryEndP";
+import { getAllUsersAndSortEndP } from "./endpoints/getAllUsersAndSortEndP";
 
 const app: Express = express();
 
@@ -20,6 +21,7 @@ app.use(cors())
 app.get("/user" , getAllUsers);
 app.get("/user/:name", getAllUsersByName)
 app.get("/users", getAllUsersByNameWithQueryEndP)
+app.get("/users/sort", getAllUsersAndSortEndP)
 
 // ###############
 // ## Endpoints ##    
