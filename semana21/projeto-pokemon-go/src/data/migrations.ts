@@ -1,20 +1,20 @@
 import { connection } from "../connection";
-import pokemonGo from "../pokemonGo.json";
+import { pokemonGo } from "../pokemon"
 
 const printError = (error: any) => {
     console.log(error.sqlMessage || error.message)
 }
 
-const insertPokemons = ()=>connection("pokemonTable")
-.insert(pokemonGo)
-.then(()=>{console.log("Pokemons Inseridos")})
-.catch(printError)
-
-
-const closeConnection = () =>{
+const closeConnection = () => {
     connection.destroy()
 }
-insertPokemons()
-.then(closeConnection)
 
-
+connection("red_fox_pokemon")
+    .insert(pokemonGo.map((pokemon:any) => {
+        pokemon.Row_Value = pokemon.Row
+        delete pokemon.Row
+        return pokemon
+    }))
+    .then(() => { console.log("Pokemons Inseridos") })
+    .catch(printError)
+    .finally(closeConnection)
