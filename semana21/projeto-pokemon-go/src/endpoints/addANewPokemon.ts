@@ -39,7 +39,7 @@ export const addPokemon = async (req: Request, res: Response) => {
                 CP39: req.body.CP39
             })
 
-        const addThePokemon = await insertANewPokemon(newPokemonBody.ATK, newPokemonBody.Aquireable, newPokemonBody.CP39, newPokemonBody.CP40, newPokemonBody.Cross_Gen, newPokemonBody.DEF, newPokemonBody.Evolution_Stage, newPokemonBody.Evolved, newPokemonBody.FamilyID, newPokemonBody.Future_Evolve, newPokemonBody.Generation, newPokemonBody.Hatchable, newPokemonBody.Img_name, newPokemonBody.Legendary, newPokemonBody.Name, newPokemonBody.Nest, newPokemonBody.New, newPokemonBody.NotGettable, newPokemonBody.Pokedex_Number, newPokemonBody.Raidable, newPokemonBody.Regional, newPokemonBody.Row_Value, newPokemonBody.S8TAT_TOTAL, newPokemonBody.STA, newPokemonBody.Shiny, newPokemonBody.Spawns, newPokemonBody.Type1, newPokemonBody.Type2, newPokemonBody.Weather1, newPokemonBody.Weather2)
+        await insertANewPokemon(newPokemonBody.ATK, newPokemonBody.Aquireable, newPokemonBody.CP39, newPokemonBody.CP40, newPokemonBody.Cross_Gen, newPokemonBody.DEF, newPokemonBody.Evolution_Stage, newPokemonBody.Evolved, newPokemonBody.FamilyID, newPokemonBody.Future_Evolve, newPokemonBody.Generation, newPokemonBody.Hatchable, newPokemonBody.Img_name, newPokemonBody.Legendary, newPokemonBody.Name, newPokemonBody.Nest, newPokemonBody.New, newPokemonBody.NotGettable, newPokemonBody.Pokedex_Number, newPokemonBody.Raidable, newPokemonBody.Regional, newPokemonBody.Row_Value, newPokemonBody.S8TAT_TOTAL, newPokemonBody.STA, newPokemonBody.Shiny, newPokemonBody.Spawns, newPokemonBody.Type1, newPokemonBody.Type2, newPokemonBody.Weather1, newPokemonBody.Weather2)
 
         if (!req.body || req.body === 0) {
             res.statusCode = 400;
