@@ -4,8 +4,8 @@ export const selectAllPokemonsAndSort = async (Name: string) => {
     const result = await connection.raw
         (`
         SELECT * FROM red_fox_pokemon
-        WHERE ${Name} LIKE %${Name}%
-        ORDER BY ${Name}  ASC   
+        WHERE Name LIKE "%${Name}%"
+        ORDER BY Name ASC ;
         `)
-        return result[0];
+        return result;
 }

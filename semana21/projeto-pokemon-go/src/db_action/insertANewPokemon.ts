@@ -1,6 +1,8 @@
 import { connection } from "../connection";
 
-export const insertANewPokemon = async (Row_Value: string,
+export const insertANewPokemon = async (
+    id:number,
+    Row_Value: string,
     Name: string,
     Pokedex_Number: string,
     Img_name: string,
@@ -13,7 +15,7 @@ export const insertANewPokemon = async (Row_Value: string,
     Type2: string,
     Weather1: string,
     Weather2: string,
-    S8TAT_TOTAL: string,
+    STAT_TOTAL: string,
     ATK: string,
     DEF: string,
     STA: string,
@@ -31,7 +33,9 @@ export const insertANewPokemon = async (Row_Value: string,
     CP40: string,
     CP39: string) => {
     const insertion = await connection.raw(`
-    INSERT INTO red_fox_pokemon(Row_Value,
+    INSERT INTO red_fox_pokemon(
+        id,
+        Row_Value,
         Name ,
         Pokedex_Number ,
         Img_name ,
@@ -44,7 +48,7 @@ export const insertANewPokemon = async (Row_Value: string,
         Type2 ,
         Weather1 ,
         Weather2 ,
-        S8TAT_TOTAL ,
+        STAT_TOTAL ,
         ATK ,
         DEF ,
         STA ,
@@ -61,35 +65,36 @@ export const insertANewPokemon = async (Row_Value: string,
         Future_Evolve ,
         CP40,
         CP39 )
-        VALUES("${Row_Value}"
-        "${Name}"
-        "${Pokedex_Number}"
-        "${Img_name}"
-        "${Generation}"
-        "${Evolution_Stage}"
-        "${Evolved}"
-        "${FamilyID}"
-        "${Cross_Gen}"
-        "${Type1}"
-        "${Type2}"
-        "${Weather1}"
-        "${Weather2}"
-        "${S8TAT_TOTAL}"
-        "${ATK}"
-        "${DEF}"
-        "${STA}"
-        "${Legendary}"
-        "${Aquireable}"
-        "${Spawns}"
-        "${Regional}"
-        "${Raidable}"
-        "${Hatchable}"
-        "${Shiny}"
-        "${Nest}"
-        "${New}"
-        "${NotGettable}"
-        "${Future_Evolve}"
-        "${CP40}"
+        VALUES(id,
+       "${Row_Value}",
+        "${Name}",
+        "${Pokedex_Number}",
+        "${Img_name}",
+        "${Generation}",
+        "${Evolution_Stage}",
+        "${Evolved}",
+        "${FamilyID}",
+        "${Cross_Gen}",
+        "${Type1}",
+        "${Type2}",
+        "${Weather1}",
+        "${Weather2}",
+        "${STAT_TOTAL}",
+        "${ATK}",
+        "${DEF}",
+        "${STA}",
+        "${Legendary}",
+        "${Aquireable}",
+        "${Spawns}",
+        "${Regional}",
+        "${Raidable}",
+        "${Hatchable}",
+        "${Shiny}",
+        "${Nest}",
+        "${New}",
+        "${NotGettable}",
+        "${Future_Evolve}",
+        "${CP40}",
         "${CP39}")`)
 
 }

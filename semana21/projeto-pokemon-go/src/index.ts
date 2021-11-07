@@ -22,7 +22,7 @@ app.use(cors());
 app.get("/pokemon", getAllPokemons);
 app.get("/pokemon/:Name", getPokemonByName);
 app.get("/pokemon/sort", getAllPokemonAndSort);
-app.get("pokemon/sort/paginate", getAllPokemonSortAndLimitByFive);
+app.get("/pokemon/sort/paginate", getAllPokemonSortAndLimitByFive);
 app.post("/pokemon" , addPokemon);
 
 //#################

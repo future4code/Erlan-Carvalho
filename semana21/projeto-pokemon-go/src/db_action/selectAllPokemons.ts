@@ -5,5 +5,5 @@ export const selectAllPokemons = async () =>{
 select("*").
 from("red_fox_pokemon")
 
-return result[0]
+return result
 }

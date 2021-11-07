@@ -7,6 +7,7 @@ export const addPokemon = async (req: Request, res: Response) => {
 
         const newPokemonBody = (
             {
+            
                 Row_Value: req.body.Row_Value,
                 Name: req.body.Name,
                 Pokedex_Number: req.body.Pokedex_Number,
@@ -20,7 +21,7 @@ export const addPokemon = async (req: Request, res: Response) => {
                 Type2: req.body.Type2,
                 Weather1: req.body.Weather1,
                 Weather2: req.body.Weather2,
-                S8TAT_TOTAL: req.body.S8TAT_TOTAL,
+                STAT_TOTAL: req.body.STAT_TOTAL,
                 ATK: req.body.ATK,
                 DEF: req.body.DEF,
                 STA: req.body.STA,
@@ -39,7 +40,9 @@ export const addPokemon = async (req: Request, res: Response) => {
                 CP39: req.body.CP39
             })
 
-        await insertANewPokemon(newPokemonBody.ATK, newPokemonBody.Aquireable, newPokemonBody.CP39, newPokemonBody.CP40, newPokemonBody.Cross_Gen, newPokemonBody.DEF, newPokemonBody.Evolution_Stage, newPokemonBody.Evolved, newPokemonBody.FamilyID, newPokemonBody.Future_Evolve, newPokemonBody.Generation, newPokemonBody.Hatchable, newPokemonBody.Img_name, newPokemonBody.Legendary, newPokemonBody.Name, newPokemonBody.Nest, newPokemonBody.New, newPokemonBody.NotGettable, newPokemonBody.Pokedex_Number, newPokemonBody.Raidable, newPokemonBody.Regional, newPokemonBody.Row_Value, newPokemonBody.S8TAT_TOTAL, newPokemonBody.STA, newPokemonBody.Shiny, newPokemonBody.Spawns, newPokemonBody.Type1, newPokemonBody.Type2, newPokemonBody.Weather1, newPokemonBody.Weather2)
+            const id = Date.now()
+
+        await insertANewPokemon(id, newPokemonBody.Row_Value, newPokemonBody.Name, newPokemonBody.Pokedex_Number, newPokemonBody.Img_name, newPokemonBody.Generation, newPokemonBody.Evolution_Stage, newPokemonBody.Evolved, newPokemonBody.FamilyID, newPokemonBody.Cross_Gen, newPokemonBody.Type1, newPokemonBody.Type2, newPokemonBody.Weather1, newPokemonBody.Weather2, newPokemonBody.STAT_TOTAL, newPokemonBody.ATK, newPokemonBody.DEF, newPokemonBody.STA, newPokemonBody.Legendary, newPokemonBody.Aquireable, newPokemonBody.Spawns, newPokemonBody.Regional, newPokemonBody.Raidable, newPokemonBody.Hatchable, newPokemonBody.Shiny, newPokemonBody.Nest, newPokemonBody.New, newPokemonBody.NotGettable, newPokemonBody.Future_Evolve, newPokemonBody.CP40, newPokemonBody.CP39)
 
         if (!req.body || req.body === 0) {
             res.statusCode = 400;
