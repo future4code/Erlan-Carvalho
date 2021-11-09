@@ -1,3 +1,6 @@
+
+//exercício 1 
+
 interface CharacterInfo {
     name: string,
     power: number,
@@ -5,7 +8,7 @@ interface CharacterInfo {
     life: number
 }
 
-const validateCharacter = (input: CharacterInfo): boolean => {
+export const validateCharacter = (input: CharacterInfo): boolean => {
 
     if (!input.name || !input.power || !input.defense || !input.life) {
         return false
@@ -16,3 +19,8 @@ const validateCharacter = (input: CharacterInfo): boolean => {
     }
 
 }
+
+//exercício 2 
+
+
+
