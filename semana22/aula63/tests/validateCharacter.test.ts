@@ -1,6 +1,6 @@
 //exercício 2 
 
-import { validateCharacter } from "../src/index";
+import { validateCharacter } from "../src/validateCharacter";
 
 describe("ValidateCharacter Tests", () => {
 
