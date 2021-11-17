@@ -1,5 +1,6 @@
 import React from "react";
-import { HeadersFather, TheHeader } from "../src/styles";
+import { HeadersFather, TheHeader, StyledBodyTitle, StyledTableSection, StyledChartSection, InfoIntroduction, BodyBox } from "../src/styles";
+import { PieChart } from "react-minimal-pie-chart";
 
 function App() {
   return (
@@ -13,17 +14,36 @@ function App() {
         </TheHeader>
       </HeadersFather>
       <div>
-        <h1>Body</h1>
-        <h2>Data</h2>
-        <p>Information of employees participation in business meetings</p>
-        <table>
-          <th>first name<tr><td>Maria</td></tr> <tr><td>José</td></tr></th>
 
-          <th>last name <tr><td>Dos Santos</td></tr> <tr><td>Freire</td></tr></th>
+        <InfoIntroduction>
+          <StyledBodyTitle>Data</StyledBodyTitle>
+          <p>Information of employees participation in business meetings</p>
+        </InfoIntroduction>
+        <BodyBox>
+          <StyledTableSection>
+            <table>
+              <th>first name<tr><td>Maria</td></tr> <tr><td>José</td></tr></th>
 
-          <th>participation <tr><td>50%</td></tr> <tr><td> 70%</td></tr></th>
-        </table>
+              <th>last name <tr><td>Dos Santos</td></tr> <tr><td>Freire</td></tr></th>
 
+              <th>participation <tr><td>50%</td></tr> <tr><td> 50%</td></tr></th>
+            </table>
+          </StyledTableSection>
+
+          <StyledChartSection>
+            <PieChart
+              data={
+                [
+                  { title: 'Maria', value: 50, color: '#E38627' },
+                  { title: 'José', value: 50, color: '#C13C37' },
+                ]}
+              startAngle={90}
+              animate={true}
+              viewBoxSize={[200, 200]}
+              lineWidth={50}
+            />;
+          </StyledChartSection>
+        </BodyBox>
       </div>
     </div>
   );
