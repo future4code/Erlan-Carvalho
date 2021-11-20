@@ -2,6 +2,7 @@ import { app } from "./app";
 import { AddressInfo } from "net";
 import { getPeolpleInfoController } from "./controller/endpoints/getPeolpleInfoController";
 import { insertPeopleIntoInfoDbController } from "./controller/endpoints/insertPeopleIntoInfoDbController";
+import { getAllPeopleInfoController } from "./controller/endpoints/getAllPeopleInffoController";
 
 
 
@@ -11,6 +12,7 @@ import { insertPeopleIntoInfoDbController } from "./controller/endpoints/insertP
 
 app.post("/info", insertPeopleIntoInfoDbController)
 app.get("/info/:firstName", getPeolpleInfoController)
+app.get("/info", getAllPeopleInfoController)
 
 //###############
 //## ENDPOINTS ##
