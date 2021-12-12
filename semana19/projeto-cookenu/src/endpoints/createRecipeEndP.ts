@@ -5,9 +5,10 @@ import { generateId } from "../services/idCreation";
 
 export const createRecipeEndP = async (req: Request, res: Response) => {
     try {
-        const token = req.headers.authorization as string;
+        const theToken = req.headers.authorization as string;
 
-        const validationOfToken = getUserInfoByToken(token);
+        const validationOfToken = getUserInfoByToken(theToken);
+
 
         const recipeInfo = (
             {

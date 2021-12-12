@@ -17,7 +17,7 @@ export const signUpEndP =  async (req: Request, res: Response) => {
 
         const id = generateId()
 
-        const password = generateHash(doTheSignUp.userPassword) as string | any
+        const password = await generateHash(doTheSignUp.userPassword) 
 
         const token = generateToken({ id })
 
