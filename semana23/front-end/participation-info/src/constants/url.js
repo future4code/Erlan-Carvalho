@@ -1,1 +1,1 @@
-export const URL_BASE = "http://localhost:3003"
+export const URL_BASE = "https://people-information.herokuapp.com"
