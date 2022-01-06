@@ -1,19 +1,20 @@
 import { authenticationData } from "../types/authenticationData";
 import * as jwt from "jsonwebtoken";
+import authInterface from "../types/authAndRoles";
 
 export const generateToken = (input: authenticationData): string => {
     return jwt.sign(
         { id: input.id },
         String(process.env.JWT_KEY),
-        { expiresIn: "5min" })
+        { expiresIn: "18h" })
 }
 
-export const getToken = (token: string): authenticationData | null => {
+export const getToken = (token: string):authInterface  => {
     try {
-        const { id } = jwt.verify(token, String(process.env.JWT_KEY)) as authenticationData
-        return { id }
+        const tokenData= jwt.verify(token, String(process.env.JWT_KEY)) as jwt.JwtPayload
+        return {id: tokenData.id ,role:tokenData.role}
 
-    } catch (error) {
-        return null
+    } catch (error:any) {
+        return error
     }
 }
